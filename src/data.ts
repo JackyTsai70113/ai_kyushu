@@ -11,6 +11,14 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=32.936993,131.0792329",
     mainTheme: "手作烘焙 ｜ 純淨水源 ｜ 16:45 準時採購",
     note: "住：熊本阿蘇萬楓酒店。Day 1 先 MERUKORO 補給再去白川水源；不排黑川溫泉散策，也不加入阿蘇神社／門前町，重點是準時 16:45 到阿蘇車站採買。",
+    meals: {
+      breakfast: "星宇航空精緻機上早套餐（精緻主餐、新鮮水果、果汁與咖啡/熱茶）",
+      lunch: "熊本機場抵達大廳簡餐（日式飯糰、超商熟食或車上輕便點心進食，保持右駕專注）",
+      dinner: "道之驛阿蘇精選：極高人氣阿蘇限定赤牛漢堡便當、手工鮮奶布丁、高菜飯糰與 ASO MILK 鮮乳"
+    },
+    weatherForecast: "熊本平地高溫約 28°C~31°C 稍感悶熱；往阿蘇山區前行後，氣溫會平緩降至舒服的 21°C~25°C。午後多雲偶晴，山頂周遭略有短暫偶雨機率，建議帶防曬帽與防風薄外衣。",
+    rainBackup: "白川水源步道兩旁樹木茂密，下小雨不影響漫步，反而格外清幽；若遇大雨，可縮短水源步行，直奔「道之驛阿蘇」室內特產販賣所採購，並提早回緊鄰的「阿蘇萬楓酒店」辦理入住，在質感極佳的公共交誼廳享用熱茶與咖啡，悠閒避雨。",
+    gasStationTip: "熊本機場取車時 Toyota 租車已提供滿油狀態，當天僅行駛約 1.5 小時，不需加油。若遇緊急狀況，阿蘇車站前方即有【ENEOS 阿蘇駅前店】加油站。",
     items: [
       {
         time: "07:30 - 10:45",
@@ -30,7 +38,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "car",
       },
       {
-        time: "13:00 - 13:40",
+        time: "13:05 - 13:40",
         place: "熊本機場 → MERUKORO",
         move: "自駕車程約 35-40 分鐘",
         plan: "開出機場朝阿蘇山區前行。第一站先補給著名的手作窯烤麵包與現做熱飲，避免後段採買前大家肚子太餓。",
@@ -101,6 +109,14 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=33.0712093,131.1805005",
     mainTheme: "極地火山 ｜ 外輪山絕景 ｜ 悠悠黑川溫泉",
     note: "住：瀨之本高原酒店。黑川溫泉散策不放 Day 1，改排 Day 2 傍晚可選；若長輩或小孩疲累，直接留在飯店休息。",
+    meals: {
+      breakfast: "於熊本阿蘇萬楓酒店房間或質感大客廳吃：昨日阿蘇道之驛採購之優酪乳、手工麵包與赤牛御便當",
+      lunch: "地圖推薦極味餐廳：あか牛丼専門店 ごとう屋阿蘇店，品嚐香烤頂級阿蘇赤牛丼（Akaushi Dong）",
+      dinner: "瀨之本高原酒店特製：頂級傳統日式會席料理晚餐（特產牛肉陶板燒、旬味小品配日本地酒）"
+    },
+    weatherForecast: "阿蘇火山口與草千里屬中高海拔（標高約 1,140m），7 月山頂氣溫僅約 18°C~23°C，風勢甚猛、常現濃霧。紫外線偏高強，全體請備妥輕巧抗風防寒外套、太陽帽與遮陽傘。",
+    rainBackup: "阿蘇火山和中岳火山口極易受大雨或濃霧影響封鎖。若遭遇封鎖：① 棄火山口，改去草千里旁的【阿蘇火山博物館】吹冷氣、學習火山地質知識。② 傍晚黑川溫泉散策，若遇雨或長輩疲累，果斷放棄，直接在「瀨之本高原酒店」內享受高原森林微風與露天星空溫泉風呂。",
+    gasStationTip: "山區路段加油站較少。沿國道 57 號線及阿蘇市區有數家【ENEOS】或【Cosmo】加油站。建議在中午山下用餐完前往大觀峰前，可在阿蘇市區加半箱汽油以策安全。",
     items: [
       {
         time: "08:30 - 09:10",
@@ -176,6 +192,14 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=32.7989409,130.7055538",
     mainTheme: "峽谷仙境划船 ｜ 壯麗小火車 ｜ 熊本連住避風港",
     note: "住：REF Kumamoto by VESSEL HOTELS。所有高千穗段落以 1 小時以上區塊安排；若划船預約時間不同，以船班為準。",
+    meals: {
+      breakfast: "瀨之本高原酒店特供：高評價多樣日式和食自助早宴（在地小農優質高菜飯與蔬菜粥，特別適口）",
+      lunch: "高千穗特色體驗：「千穗之家 元祖流水麵」，在爽淨竹槽水道中手夾爽彈涼細麵（對大人與幼童均為趣味橫生的難忘體驗）",
+      dinner: "熊本新市街美食街自選：熊本香濃濃拉麵、精緻壽司、高階馬肉刺身或拱廊居酒屋大餐"
+    },
+    weatherForecast: "高千穗峽谷身處深邃林澗，氣溫落在 20°C~25°C，非常清新涼爽。水氣充裕，午後易有短暫山區小雨。傍晚返回熊本市中心，氣溫略上升至 26°C~31°C。",
+    rainBackup: "高千穗峽谷划船有極高「大雨暴漲停開限制」。若划船停班：① 小雨仍可手持雨傘徒步「高千穗峽自然散步道」，仰望大懸崖與真名井瀑布的雷霆水霧之姿。② 豪雨則改在室內的「高千穗峽淡水魚水族館」避雨，看各種鱘魚。③ 或直接開往熊本，在「SAKURA MACHI 櫻町熊本」巨型商場及空中雨廊避雨漫步、俯瞰雨中名城。",
+    gasStationTip: "高千穗出發返熊本市區為長途自駕（約 2.5 - 3 小時），多山路。出發前，可在高千穗神社周邊的【ENEOS 高千穗SS】（加油站）或【Apollo Station】把油箱補至 8 分滿，以提供高速大段巡航保障。",
     items: [
       {
         time: "08:00 - 09:50",
@@ -217,7 +241,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         place: "高千穗 → 熊本市區 REF VESSEL 飯店 check-in",
         move: "長途行車約 2.5-3 小時 (車流順暢)",
         plan: "專注自駕，安全第一。直抵位於熊本市中心新市街商圈的 REF Kumamoto 飯店安頓、享用大廳無限供應迎賓冷飲。晚餐於旁邊長約數百米、熱鬧無雨的拱廊商店街享用特色居酒屋或地產烏龍麵。",
-        memo: "停車：飯店合作或自設大停車場。市區連住 3 晚、不需要每日裝箱搬運沉重行李，極大程度保護長幼精氣神！",
+        memo: "停車：飯店合作或自設大停車場。市區連住 3 晚、不需要每日裝箱，免去顛沛流離，極具休養價值。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.7989409,130.7055538",
         category: "hotel",
       },
@@ -228,11 +252,19 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     date: "2026/07/07",
     weekday: "二",
     title: "熊本市區、水前寺、車站商場、黑亭",
-    subTitle: "庭園漫步、AMU冷氣巨屏與極上老牌黑蒜拉麵",
+    subTitle: "市區漫步舒緩體力、引泉古風庭園與巨型商圈滿足採購",
     hotel: "REF Kumamoto by VESSEL HOTELS (新市街)",
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=32.7989409,130.7055538",
-    mainTheme: "水之庭園 ｜ 購物不流汗 ｜ 連續降溫補給",
+    mainTheme: "優雅成趣園 ｜ 車站清涼瀑布 ｜ 黑蒜拉麵始祖",
     note: "住：REF Kumamoto。7/6 長車程後，這天放慢腳步，以市區與室內補給為主。",
+    meals: {
+      breakfast: "REF 熊本新市街飯店豐富日式自助朝食（提供多達數十種熊本在地特色餐點與現烤麵包）",
+      lunch: "三大拉麵名店：黑亭拉麵 熊本車站本店，焦香濃郁黑蒜油豚骨拉麵，中粗麵身、香氣十足",
+      dinner: "熊本市中心、下通商店街自選：手作燒肉、日式定食、居酒屋或精緻壽司，步行可達，不累不折返"
+    },
+    weatherForecast: "熊本市區約 27°C~31°C，多雲偶晴。午後由於熱對流，可能會有短暫雷陣雨，雨後會轉為防暑避暑的清爽天氣。全天適合市區室內商場與景點參觀。",
+    rainBackup: "水前寺成趣園若下大雨，可縮短園內步道停留，改在名茶屋「古今傳授之間」內聽雨品抹茶；隨後移步前往「AMU PLAZA 熊本」，其為全方位室內大型商場，擁有 3 層樓高瀑布景致、兒童遊戲區與各種免稅店，下雨完全不受影響。",
+    gasStationTip: "今日均在熊本市區移動，車程極短（5~20 分鐘為主）。市區有大量加油站，如【ENEOS 下通店】。因後續行程皆在市區，且第 6 天返台前才需滿油還車，今天可暫不用加油。",
     items: [
       {
         time: "09:30 - 10:45",
@@ -256,7 +288,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         time: "15:00 - 17:00",
         place: "SAKURA MACHI 櫻町熊本 ＆ 空中大花園",
         move: "車程或電車約 15 分鐘",
-        plan: "漫步屋頂森林花園、與巨型熊本熊合影留念及俯瞰熊本城。亦可在商場內給全家買名茶、冷飲。或隨時改由家人抱小孩回對面僅 5 分鐘步程的 REF 飯店睡午覺，分組逛商店街買精品，時間極其彈性。",
+        plan: "漫步屋頂森林花園、與巨型熊本熊合影留念及俯瞰熊本城。亦可在商場內給全家買名茶、冷飲。或隨時改由家人抱小孩回對面僅 5 分鐘步程 of REF 飯店睡午覺，分組逛商店街買精品，時間極其彈性。",
         memo: "停車：SAKURA MACHI 商城大型停車場，推嬰兒車或輪椅直達電梯零障礙。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.8001831,130.7038171",
         category: "rest",
@@ -281,6 +313,14 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=32.7989409,130.7055538",
     mainTheme: "巍峨名城 ｜ 旬彩之寶 ｜ 勝烈亭極樂豬排",
     note: "住：REF Kumamoto。最後完整一天集中熊本市區，少開車、多步行，便於長輩小孩體力調節。",
+    meals: {
+      breakfast: "REF 熊本 VESSEL 飯店特供：主廚現搓招牌熊本芥末蓮藕球、佐賀明太子飯糰、西式蓬鬆炒蛋配新鮮美式咖啡",
+      lunch: "櫻之馬場 城彩苑散策美食：爆汁海膽可樂餅、熱呼呼熊本熊大判燒、黑毛和牛串燒與極香高千穗牛奶霜淇淋",
+      dinner: "全日本炸豬排名店冠軍之首：勝烈亭新市街本店，招牌「鹿兒島六白里脊黑毛豬排大名套宴」（大人小孩均可樂趣式研磨金黃芝麻）"
+    },
+    weatherForecast: "熊本市區約 27°C~31°C，多雲偏晴。盛夏氣流上升活躍，下午四點左右市區或有短暫雷對流，隨後涼爽宜人，非常適合傍晚徒步至勝烈亭吃晚餐。",
+    rainBackup: "熊本城配有極其先進的「天守閣無障礙冷氣大電梯與玻璃扶手步道」，雨天可極致安逸地在室內吹冷氣、學熊本城築城與地震復興史；櫻之馬場與上通下通拱廊均設有密閉耐雨天棚（Arcade），可保持數百公尺乾爽。即使大雨磅礴，外婆與小孩在商店街散步逛藥妝店依然一滴雨都淋不到！",
+    gasStationTip: "明天即將還車。租車規定還車前必須在機場周邊 3 公里內加油，所以今晚在市區不用特地加油。可以今晚把 Toyota 還車單、ETC 卡袋與護照放到便利隨行包，以便明早無驚無險滿油還車。",
     items: [
       {
         time: "09:00 - 11:30",
@@ -337,6 +377,14 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotel: "溫暖的家",
     mainTheme: "滿油加油 ｜ Toyota專車接駁 ｜ 圓滿返台",
     note: "回程依航班資訊：11:55 熊本機場，13:20 星宇桃機一航廈。",
+    meals: {
+      breakfast: "REF 飯店早朝朝食或熊本機場便利超商 7-11 麵包、夾心熱狗、熱拿鐵與 ASO 米其林鮮奶",
+      lunch: "星宇 JX847 機上由星級主廚團隊特製的「手作日式牛壽喜燒飯」或「胡麻鮮嫩雞排飯」配經典冷泡茶",
+      dinner: "返台後溫暖的家，吃最熟悉的台灣家鄉味或排骨飯，洗淨塵埃"
+    },
+    weatherForecast: "熊本機場氣溫約 26°C~31°C。當天主要在機場航站、車內、飛機客艙以及桃園機場等全室內移動，行駛天氣良好、安全降落。",
+    rainBackup: "完全無懼雨天氣！所有的移動包括 Toyota 免費大巴士接駁和機場登機廊橋均配有棚頂或連接大廳通道。即使外頭下起狂風雨，也能全家優雅乾燥地安上飛機。",
+    gasStationTip: "⚠️【最重要的一站：滿油還車加油站】！必須在 Toyota 熊本空港店 3 公里半徑內將車加滿 Regular 常規無鉛油槍。推薦加油站：【ENEOS 熊本空港SS】（一分鐘抵達），結帳跟加油員說『レギュラー、満タン (Regular, Mantan!)』。加油後，務必向加油員索取實體紙本「滿油收據 (Ryoshusho)」，還車拿給租車櫃檯核對才算過關！",
     items: [
       {
         time: "07:45 - 08:25",
@@ -380,11 +428,11 @@ export const TRAVEL_GUIDE_INFO = {
   shopping: [
     {
       title: "【熊本最強兩大拱廊商圈】上通 ＆ 下通商店街",
-      description: "這條長約 1 公里的無雨巨型遮雨棚商店街，好買、好逛且不怕日曬雨淋。這裡有各大藥妝松本清、Daikoku大國、杉藥局，以及大型百貨、百元店、各種熊本熊文創周邊。",
+      description: "這條長約 1 公路上無雨巨型遮雨棚商店街，好買、好逛且不怕日曬雨淋。這裡有各大藥妝松本清、Daikoku大國、杉藥局，以及大型百貨、百元店、各種熊本熊文創周邊。",
       tips: [
         "大國藥妝 (Daikoku)：一般藥品通常這家最便宜，常有中文店員服務，滿額可直接免稅退稅加打折。",
         "鶴屋百貨 (Tsuruya)：位於下通旁，這是有百年歷史的經典百貨，也是『熊本熊廣場 KUMAmon Square』的所在地，定時可以看熊本熊部長現場熱舞！",
-        "Sugi 杉藥局：美妝保養與面膜款式最齊全，走精緻高質感陳設，逛起來較舒服。"
+        "Sugi 杉藥局：美妝保養與面膜款式最齊全，走精質感陳設，逛起來較舒服。"
       ]
     },
     {
@@ -467,7 +515,7 @@ export const COMMON_PHRASES: Phrase[] = [
   { japanese: "おすすめはどれですか？", romaji: "Osume wa dore desu ka?", meaning: "請問店家推薦什麼招牌菜色呢？", category: "dining" },
   { japanese: "お水をいただけますか？", romaji: "Omizu o itadakemasu ka?", meaning: "不好意思，可以給我們一些開水嗎？", category: "dining" },
   { japanese: "レギュラーを満タンでお願いします", romaji: "Reguryā o mantan de onegai shimasu", meaning: "請幫我加滿常規（紅槍）無鉛汽油 (加油站員工用)", category: "transit" },
-  { japanese: "トイレは走るですか？", romaji: "Toire wa doko desu ka?", meaning: "請問洗手間（廁所）在哪裡？ (超實用！)", category: "emergency" },
+  { japanese: "トイレはどこですか？", romaji: "Toire wa doko desu ka?", meaning: "請問洗手間（廁所）在哪裡？ (超實用！)", category: "emergency" },
   { japanese: "大丈夫（だいじょうぶ）です", romaji: "Daijoubu desu", meaning: "沒關係 / 沒問題 / 不用了 (婉拒塑膠袋、收據時用)", category: "transit" }
 ];
 

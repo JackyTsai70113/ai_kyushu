@@ -20,6 +20,14 @@ export interface ItineraryDay {
   note: string;
   items: ScheduleItem[];
   tips?: string[];
+  meals?: {
+    breakfast: string;
+    lunch: string;
+    dinner: string;
+  };
+  weatherForecast?: string;
+  rainBackup?: string;
+  gasStationTip?: string;
 }
 
 export interface ChecklistItem {

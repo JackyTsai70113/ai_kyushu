@@ -19,7 +19,10 @@ import {
   Calendar,
   Layers,
   ChevronDown,
-  Compass
+  Compass,
+  CloudSun,
+  Umbrella,
+  Fuel
 } from "lucide-react";
 
 export default function ItineraryView() {
@@ -309,6 +312,72 @@ export default function ItineraryView() {
                     💡 <span className="font-bold text-amber-300">本日小語：</span>{selectedDay.note}
                   </div>
                 </div>
+              </div>
+
+              {/* 今日彙整快覽 (Meals, Weather, Rain Backup, Gas Station) */}
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {selectedDay.meals && (
+                    <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-3">
+                      <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <Utensils className="w-4 h-4 text-amber-600 animate-pulse" />
+                        🍱 今日三餐飲食指南
+                      </h3>
+                      <div className="space-y-2.5 text-xs text-slate-600">
+                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                          <span className="font-bold text-amber-800 block mb-0.5">🥐 活力早餐</span>
+                          {selectedDay.meals.breakfast}
+                        </div>
+                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                          <span className="font-bold text-amber-800 block mb-0.5">🍱 特色午餐</span>
+                          {selectedDay.meals.lunch}
+                        </div>
+                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                          <span className="font-bold text-amber-800 block mb-0.5">🍛 豐盛晚餐</span>
+                          {selectedDay.meals.dinner}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="space-y-4 flex flex-col justify-start">
+                    {selectedDay.weatherForecast && (
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-2 flex-1">
+                        <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                          <CloudSun className="w-4 h-4 text-sky-600" />
+                          ☀️ 預估天氣狀況
+                        </h3>
+                        <p className="text-xs text-slate-600 leading-relaxed bg-sky-50/30 p-3 rounded-xl border border-sky-100/30">
+                          {selectedDay.weatherForecast}
+                        </p>
+                      </div>
+                    )}
+
+                    {selectedDay.rainBackup && (
+                      <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-2 flex-1">
+                        <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                          <Umbrella className="w-4 h-4 text-purple-600" />
+                          ☔ 雨天替代備案
+                        </h3>
+                        <p className="text-xs text-slate-600 leading-relaxed bg-purple-50/30 p-3 rounded-xl border border-purple-100/30">
+                          {selectedDay.rainBackup}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {selectedDay.gasStationTip && (
+                  <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-2">
+                    <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                      <Fuel className="w-4 h-4 text-rose-600" />
+                      ⛽ 自駕加油攻略與叮嚀
+                    </h3>
+                    <p className="text-xs text-slate-700 leading-relaxed bg-rose-50/30 p-3.5 border border-rose-100/30 rounded-xl font-medium">
+                      {selectedDay.gasStationTip}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Day Time Schedule Blocks */}
