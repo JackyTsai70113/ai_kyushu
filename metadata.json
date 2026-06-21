@@ -1,0 +1,6 @@
+{
+  "name": "2026 九州家庭自駕行手冊",
+  "description": "專為 2026 九州家庭自駕打造的精緻互動排程導覽，包含 6 天完整行程、景點地圖、購物血拼與吃住指南，並內建 AI 隨身旅遊顧問。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
