@@ -9,12 +9,11 @@ interface ChatMessage {
 }
 
 export default function AiAssistant() {
-  const isAiChatConnected = false;
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: "welcome",
       role: "assistant",
-      content: "⚠️ AI 導遊目前未串接，無法使用。\n\n這個頁面部署在 GitHub Pages 靜態網站上，沒有後端服務可處理 `/api/gemini/chat`，所以聊天功能暫時關閉，避免誤以為是系統錯誤。\n\n其他行程、手冊、行李與開銷等前端功能仍可正常使用。",
+      content: "👋 您好！我是您的 2026 九州行專屬 AI 隨身導遊兼自駕顧問。\n\n不論您想了解：\n1. 🚗 **阿蘇自駕加油、左駕如何防呆、過 ETC 詳情**\n2. 🏔️ **如何確認阿蘇火山管制（青/黃/紅燈）與備案**\n3. 🍣 **熊本拉麵黑亭、勝烈亭豬排如何排隊與點菜**\n4. 🛍️ **上下通藥妝必買推薦、Visit Japan Web 入境申請**\n\n我都非常樂意為您與長輩小輩詳細解答喔！您也可以直接點選下方的常問問題快速提問：",
       time: new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })
     }
   ]);
@@ -39,17 +38,6 @@ export default function AiAssistant() {
 
   const handleSendMessage = async (textToSend: string) => {
     if (!textToSend.trim() || isLoading) return;
-    if (!isAiChatConnected) {
-      const offlineMsg: ChatMessage = {
-        id: "offline-" + Date.now().toString(),
-        role: "assistant",
-        content: "AI 導遊目前未串接，無法使用。此靜態頁面沒有後端 API，請先使用行程、手冊、行李與開銷等功能。",
-        time: new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })
-      };
-      setMessages((prev) => [...prev, offlineMsg]);
-      setInputValue("");
-      return;
-    }
 
     const userMsg: ChatMessage = {
       id: "usr-" + Date.now().toString(),
@@ -132,9 +120,9 @@ export default function AiAssistant() {
           <div>
             <h4 className="font-bold text-xs sm:text-sm text-slate-50 flex items-center gap-1.5">
               九州自駕 AI 口袋導遊
-              <span className="text-[9px] bg-amber-950/80 text-amber-300 font-mono tracking-widest uppercase border border-amber-800/80 px-1.5 py-0.5 rounded">未串接</span>
+              <span className="text-[9px] bg-indigo-900/50 text-indigo-300 font-mono tracking-widest uppercase border border-indigo-800/80 px-1.5 py-0.5 rounded">ONLINE</span>
             </h4>
-            <p className="text-[10px] text-slate-400">GitHub Pages 靜態站無後端 API ｜ 聊天功能暫停</p>
+            <p className="text-[10px] text-slate-400">長輩與小孩友善 ｜ 回答皆為繁體中文</p>
           </div>
         </div>
 
@@ -150,16 +138,6 @@ export default function AiAssistant() {
 
       {/* Messages area */}
       <div className="flex-1 p-6 overflow-y-auto space-y-4 bg-slate-900/90 flex flex-col">
-        {!isAiChatConnected && (
-          <div className="rounded-2xl border border-amber-800/60 bg-amber-950/30 text-amber-100 p-4 text-xs sm:text-sm leading-relaxed flex gap-3">
-            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-amber-300" />
-            <div>
-              <p className="font-bold">AI 導遊未串接，無法使用</p>
-              <p className="text-amber-100/80 mt-1">目前是 GitHub Pages 靜態頁面，沒有後端可回應聊天 API。行程、手冊、行李與開銷功能仍可正常使用。</p>
-            </div>
-          </div>
-        )}
-
         {messages.map((m) => (
           <div
             key={m.id}
@@ -200,9 +178,7 @@ export default function AiAssistant() {
           <button
             key={idx}
             onClick={() => handleSendMessage(s)}
-            disabled={!isAiChatConnected}
-            title="AI 導遊未串接，無法使用"
-            className="inline-block text-slate-500 bg-slate-900 border border-slate-800 text-[11px] py-1.5 px-3 rounded-lg transition-all cursor-not-allowed select-none disabled:opacity-60"
+            className="inline-block text-slate-350 hover:text-indigo-300 hover:border-indigo-900/50 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-[11px] py-1.5 px-3 rounded-lg transition-all cursor-pointer select-none"
           >
             {s.substring(0, 22)}...
           </button>
@@ -222,15 +198,14 @@ export default function AiAssistant() {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="AI 導遊未串接，無法使用；請使用上方行程、手冊、行李與開銷功能"
-          disabled={isLoading || !isAiChatConnected}
+          placeholder="向口袋導遊諮詢：如「幼童安全座椅高度要求、高千穗去熊本開多久」..."
+          disabled={isLoading}
           className="flex-1 text-xs px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 disabled:opacity-55"
         />
         <button
           id="chat-send-message-btn"
           type="submit"
-          disabled={!inputValue.trim() || isLoading || !isAiChatConnected}
-          title="AI 導遊未串接，無法使用"
+          disabled={!inputValue.trim() || isLoading}
           className="bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-800 text-white font-bold p-3 rounded-xl transition-all flex items-center justify-center shrink-0 disabled:opacity-40"
         >
           <Send className="w-4 h-4" />
