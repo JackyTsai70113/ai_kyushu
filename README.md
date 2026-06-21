@@ -8,6 +8,16 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/3368f825-c623-49fb-bbf1-a55886062834
 
+## GitHub Pages
+
+This repo is configured to deploy the frontend as a static GitHub Pages site:
+
+https://jackytsai70113.github.io/ai_kyushu/
+
+The GitHub Pages build runs automatically on pushes to `main` through `.github/workflows/pages.yml`.
+
+Because GitHub Pages has no server runtime, the AI chat API (`/api/gemini/chat`) is disabled on the static site and shows a clear "not connected" message. The itinerary, handbook, Japanese phrases, packing, and expense tools still work as frontend features.
+
 ## Run Locally
 
 **Prerequisites:**  Node.js
