@@ -404,33 +404,6 @@ export default function ItineraryView() {
                   </div>
                 )}
 
-                {selectedDay.restaurantTips && selectedDay.restaurantTips.length > 0 && (
-                  <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-4">
-                    <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
-                      <Utensils className="w-4 h-4 text-emerald-600" />
-                      🍽️ 餐廳推薦餐點與方便素點法
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {selectedDay.restaurantTips.map((restaurant) => (
-                        <div key={restaurant.name} className="bg-emerald-50/30 border border-emerald-100/50 rounded-xl p-3.5 space-y-3">
-                          <div>
-                            <h4 className="text-xs font-bold text-slate-900">{restaurant.name}</h4>
-                            <p className="text-[11px] text-emerald-800 mt-0.5">{restaurant.timing}</p>
-                          </div>
-                          <div className="space-y-2.5">
-                            {restaurant.dishes.map((dish) => (
-                              <div key={dish.name} className="bg-white/80 rounded-lg border border-white p-2.5 text-xs text-slate-700 space-y-1">
-                                <div className="font-bold text-slate-900">{dish.name}</div>
-                                <div className="leading-relaxed">推薦原因：{dish.reason}</div>
-                                <div className="leading-relaxed text-emerald-800">方便素：{dish.vegetarianNote}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Day Time Schedule Blocks */}

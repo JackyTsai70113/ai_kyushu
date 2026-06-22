@@ -31,17 +31,6 @@ export interface ItineraryDay {
   weatherForecast?: string;
   rainBackup?: string;
   gasStationTip?: string;
-  restaurantTips?: RestaurantTip[];
-}
-
-export interface RestaurantTip {
-  name: string;
-  timing: string;
-  dishes: {
-    name: string;
-    reason: string;
-    vegetarianNote: string;
-  }[];
 }
 
 export interface ChecklistItem {
