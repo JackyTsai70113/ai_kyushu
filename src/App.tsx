@@ -221,7 +221,7 @@ export default function App() {
                   TOYOTA Rent a Car W3 自駕
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  租車等級為 TOYOTA Rent a Car W3。台灣駕照自駕取車請備妥<strong>台灣護照、台灣駕照正本與日文譯本</strong>即可。行李限制：1 台嬰兒車、3 個 29 寸大行李箱與大型手提旅行包，不帶登機箱。
+                  租車等級為 TOYOTA Rent a Car W3。台灣駕照自駕取車請備妥<strong>台灣護照、台灣駕照正本與日文譯本</strong>即可。行李限制：1 台嬰兒車、3 個 29 寸大行李箱與 1 個大型手提旅行包，不帶登機箱。
                 </p>
               </div>
             </div>

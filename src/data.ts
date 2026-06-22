@@ -36,7 +36,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         place: "熊本機場 & TOYOTA 租車 (Toyota Rent-A-Car)",
         move: "入境、免費接駁、拿車",
         plan: "領行李、取 TOYOTA Rent a Car W3 等級車、裝行李、確認幼童安全座椅、ETC 卡與導航設定及右駕防呆說明。午餐以機場或車上簡餐處理。",
-        memo: "停車/導航：Toyota 熊本機場店。行李只放 1 台嬰兒車、3 個 29 寸大行李箱與大型手提旅行包；不要帶登機箱或其他行李箱，避免後車廂放不下。",
+        memo: "停車/導航：Toyota 熊本機場店。行李只放 1 台嬰兒車、3 個 29 寸大行李箱與 1 個大型手提旅行包；不要帶登機箱或其他行李箱，避免後車廂放不下。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.8313063,130.8627347",
         category: "car",
       },
@@ -191,7 +191,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         place: "返回 CAN LI ASSO",
         move: "依午後選項回別墅約 45-90 分",
         plan: "回到南阿蘇舒適包棟別墅大客廳，晚餐以別墅自炊、外帶或超商買回美食拼盤，全家圍坐聊天，十分悠閒。",
-        memo: "別墅住宿空間大。整理明天退房行李，確認只保留 3 個 29 寸大行李箱、大型手提旅行包與嬰兒車。",
+        memo: "別墅住宿空間大。整理明天退房行李，確認只保留 3 個 29 寸大行李箱、1 個大型手提旅行包與嬰兒車。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.8234378,131.0261628",
         category: "hotel",
       },
@@ -600,7 +600,7 @@ export const INITIAL_CHECKLIST: ChecklistItem[] = [
   { id: "c1", text: "薄外套與遮陽防曬帽 (阿蘇山及高千穗山區早晚防風透涼)", category: "clothing", checked: false },
   { id: "c2", text: "好走不易滑的運動鞋 (大觀峰、鍋瀑布、高千穗峽岩石濕滑)", category: "clothing", checked: false },
   { id: "c3", text: "替換乾衣物多件、雨傘/雨衣 (高千穗峽步道與阿蘇山區晴雨兩用)", category: "clothing", checked: false },
-  { id: "c4", text: "行李上限：1 台嬰兒車、3 個 29 寸大行李箱、大型手提旅行包；不要帶登機箱或其他行李箱", category: "clothing", checked: false },
+  { id: "c4", text: "行李上限：1 台嬰兒車、3 個 29 寸大行李箱、1 個大型手提旅行包；不要帶登機箱或其他行李箱", category: "clothing", checked: false },
   
   // Pharmacy
   { id: "p1", text: "常用感冒藥、腸胃藥、創可貼 ＆ 暈車藥 (山路連綿轉彎極多)", category: "pharmacy", checked: false },
