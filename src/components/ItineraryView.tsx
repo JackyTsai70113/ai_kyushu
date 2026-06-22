@@ -191,7 +191,7 @@ export default function ItineraryView() {
                 <div className="text-center py-12 text-slate-400">
                   <Compass className="mx-auto h-12 w-12 text-slate-200 mb-3" />
                   <p className="text-sm font-medium">沒有找到相符的行程安排</p>
-                  <p className="text-xs mt-1">試試搜尋 ── 黑亭、划船、大觀峰、補給、星宇</p>
+                  <p className="text-xs mt-1">試試搜尋 ── 黑亭、草千里、大觀峰、補給、星宇</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -307,6 +307,31 @@ export default function ItineraryView() {
                       <span className="font-bold text-indigo-50">{selectedDay.mainTheme}</span>
                     </div>
                   </div>
+
+                  {selectedDay.hotelImageUrl && (
+                    <div className="mt-4 overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/50">
+                      <img
+                        src={selectedDay.hotelImageUrl}
+                        alt={`${selectedDay.hotel} 官方照片`}
+                        className="h-44 w-full object-cover md:h-56"
+                        loading="lazy"
+                      />
+                      <div className="flex flex-col gap-1 p-3 text-xs text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+                        <span className="font-semibold text-white">住宿官方照片：{selectedDay.hotel}</span>
+                        {selectedDay.hotelImageSourceUrl && (
+                          <a
+                            href={selectedDay.hotelImageSourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-100"
+                          >
+                            圖片來源：{selectedDay.hotelImageSourceName || "官方頁"}
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="mt-3 text-xs bg-amber-500/10 border border-amber-500/20 p-3.5 rounded-xl text-amber-100/90 leading-relaxed">
                     💡 <span className="font-bold text-amber-300">本日小語：</span>{selectedDay.note}

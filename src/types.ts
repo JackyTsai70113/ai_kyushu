@@ -16,6 +16,9 @@ export interface ItineraryDay {
   subTitle: string;
   hotel: string;
   hotelUrl?: string;
+  hotelImageUrl?: string;
+  hotelImageSourceUrl?: string;
+  hotelImageSourceName?: string;
   mainTheme: string;
   note: string;
   items: ScheduleItem[];

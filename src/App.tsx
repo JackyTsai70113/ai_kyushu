@@ -71,7 +71,7 @@ export default function App() {
               <span className="text-[11px] font-bold text-slate-400 tracking-wider">最新修正進度</span>
             </div>
             <p className="text-slate-350 text-xs leading-relaxed font-light">
-              高千穗峽谷划船 7/6 當日預約已安置妥當，免折返！
+              高千穗峽改為步道散策，Day 2 午餐改草千里咖啡。
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export default function App() {
             </div>
             <div className="flex justify-between">
               <span>🚗 自駕</span>
-              <span className="font-mono text-slate-40s font-medium text-xs">TOYOTA 8人座</span>
+              <span className="font-mono text-slate-40s font-medium text-xs">TOYOTA W3</span>
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@ export default function App() {
                   2026 幸福自駕核心修正提醒
                 </h3>
                 <p className="text-xs sm:text-sm text-indigo-950 leading-relaxed font-light">
-                  本版手冊以 <strong>7/6 高千穗峽谷划船預約 (預購 3 艘)</strong> 為核心景點，前夜留宿南阿蘇下榻便於自駕直通。如若遭遇阿蘇火山管制（可即時於 AI 口袋導遊或官網查詢），本日備案備有「阿蘇慢遊／萬楓溫泉憩息」備案，長輩不疲勞，小孩好放鬆。
+                  本版手冊已改為 <strong>高千穗峽步道散策、Day 2 草千里咖啡午餐、黑川散策</strong>。7/7 10:00 記得選回程 JX847 機位；若遇阿蘇火山管制，改草千里咖啡與阿蘇火山博物館。
                 </p>
               </div>
             </div>
@@ -218,10 +218,10 @@ export default function App() {
               </span>
               <div className="space-y-1">
                 <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  豪華 8 人座大型自駕
+                  TOYOTA Rent a Car W3 自駕
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  預留 TOYOTA 8人座。自駕出行叮囑：駕駛需備妥<strong>國際駕照、日文譯本、台灣駕照正本</strong> (三者缺一不可拿車)。車上已配妥幼童安全座椅，安全更省力。
+                  租車等級為 TOYOTA Rent a Car W3。台灣駕照自駕取車請備妥<strong>台灣護照、台灣駕照正本與日文譯本</strong>即可。行李限制：1 台嬰兒車、3 個 29 寸大行李箱與大型手提旅行包，不帶登機箱。
                 </p>
               </div>
             </div>
@@ -273,4 +273,3 @@ export default function App() {
     </div>
   );
 }
-

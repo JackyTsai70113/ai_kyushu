@@ -52,9 +52,9 @@ export default function InteractivePlanner() {
       setBudgetItems(JSON.parse(savedBudget));
     } else {
       setBudgetItems([
-        { id: "b1", title: "預估 8 人座大型保姆車自駕 6 天租車資", amountYen: 95000, category: "rental", payer: "共同公費" },
-        { id: "b2", title: "第一晚：阿蘇萬楓酒店 雙床間x3 預訂額", amountYen: 54000, category: "hotel", payer: "共同公費" },
-        { id: "b3", title: "高千穗峽 7/6 划船(預售票3艘)", amountYen: 15000, category: "ticket", payer: "共同公費" }
+        { id: "b1", title: "TOYOTA Rent a Car W3 等級自駕 6 天租車資", amountYen: 95000, category: "rental", payer: "共同公費" },
+        { id: "b2", title: "CAN LI ASSO 7/4-7/6 連住 2 晚住宿費", amountYen: 54000, category: "hotel", payer: "共同公費" },
+        { id: "b3", title: "鍋瀑布或菊池溪谷門票預備金", amountYen: 8000, category: "ticket", payer: "共同公費" }
       ]);
     }
 
@@ -227,7 +227,7 @@ export default function InteractivePlanner() {
               <div className="flex items-center gap-2 text-indigo-800">
                 <Sparkles className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                 <span>
-                  <strong>自駕取車提醒：</strong> 取車時務必攜帶台灣駕照正本與日文譯本 (兩件缺一不可)！
+                  <strong>自駕取車提醒：</strong> 取車時攜帶台灣護照、台灣駕照正本與日文譯本即可。
                 </span>
               </div>
               <button 
@@ -383,7 +383,7 @@ export default function InteractivePlanner() {
                   <option value="food">🍣 飲食品嚐</option>
                   <option value="rental">🚗 自駕租車</option>
                   <option value="hotel">🏨 溫泉飯店</option>
-                  <option value="ticket">🎟️ 門票划船</option>
+                  <option value="ticket">🎟️ 門票預約</option>
                   <option value="shopping">🛍️ 伴手藥妝</option>
                   <option value="other">📌 雜費其他</option>
                 </select>
