@@ -321,9 +321,9 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://www.vessel-hotel.jp/ref/kumamoto/stay/",
     hotelImageSourceName: "Vessel Hotels 官方客室頁",
     mainTheme: "優雅成趣園 ｜ 車站清涼瀑布 ｜ 黑蒜拉麵始祖",
-    note: "住：REF Kumamoto。7/7 10:00 請記得選回程班機 JX847 機位；這天放慢腳步，以市區與室內補給為主。",
+    note: "住：REF Kumamoto。7/7 早餐同時記得選回程班機 JX847 機位；這天放慢腳步，以市區與室內補給為主。",
     meals: {
-      breakfast: "REF 熊本新市街飯店豐富日式自助朝食（提供多達數十種熊本在地特色餐點與現烤麵包）",
+      breakfast: "REF 熊本新市街飯店豐富日式自助朝食（提供多達數十種熊本在地特色餐點與現烤麵包）；早餐同時選 7/9 回程星宇 JX847 機位，優先讓六大一小座位集中，訂位代號 EFGJC9",
       lunch: "三大拉麵名店：黑亭拉麵 熊本車站本店，焦香濃郁黑蒜油豚骨拉麵，中粗麵身、香氣十足",
       dinner: "熊本市中心、下通商店街自選：手作燒肉、日式定食、居酒屋或精緻壽司，步行可達，不累不折返"
     },
@@ -331,14 +331,6 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     rainBackup: "水前寺成趣園若下大雨，可縮短園內步道停留，改在名茶屋「古今傳授之間」內聽雨品抹茶；隨後移步前往「AMU PLAZA 熊本」，其為全方位室內大型商場，擁有 3 層樓高瀑布景致、兒童遊戲區與各種免稅店，下雨完全不受影響。",
     gasStationTip: "今日均在熊本市區移動，車程極短（5~20 分鐘為主）。市區有大量加油站，如【ENEOS 下通店】。因後續行程皆在市區，且第 6 天返台前才需滿油還車，今天可暫不用加油。",
     items: [
-      {
-        time: "09:30 - 10:00",
-        place: "選回程班機 JX847 機位",
-        move: "手機或電腦線上辦理",
-        plan: "7/7 10:00 準時選 7/9 回程星宇 JX847 機位，優先讓六大一小座位集中，並確認嬰兒相關需求。",
-        memo: "訂位代號 EFGJC9。完成後截圖保存，避免出發日臨櫃座位分散。",
-        category: "flight",
-      },
       {
         time: "10:15 - 11:30",
         place: "水前寺成趣園 (桃山式泉水迴遊庭園)",
