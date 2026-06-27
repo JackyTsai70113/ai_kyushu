@@ -106,28 +106,26 @@ export default function ItineraryView() {
                     setSelectedDayNum(day.dayNum);
                     setSearchQuery(""); // Clear search on tab switch
                   }}
-                  className={`w-full text-left p-3.5 rounded-xl transition-all duration-200 flex items-center justify-between border ${
+                  className={`w-full min-w-0 overflow-hidden text-left p-3.5 rounded-xl transition-all duration-200 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border ${
                     isSelected
                       ? "bg-indigo-600 text-white border-indigo-600 shadow-sm shadow-indigo-600/10"
                       : "bg-slate-50 text-slate-700 border-slate-100 hover:bg-slate-100"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className={`text-[11px] font-bold px-2 py-0.5 rounded-md ${
-                      isSelected ? "bg-indigo-700 text-indigo-100" : "bg-slate-200 text-slate-600"
+                  <span className={`shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-md ${
+                    isSelected ? "bg-indigo-700 text-indigo-100" : "bg-slate-200 text-slate-600"
+                  }`}>
+                    D{day.dayNum}
+                  </span>
+                  <div className="min-w-0 text-sm">
+                    <div className="font-semibold truncate">{day.date} ({day.weekday})</div>
+                    <div className={`text-xs truncate ${
+                      isSelected ? "text-indigo-250" : "text-slate-400"
                     }`}>
-                      D{day.dayNum}
-                    </span>
-                    <div className="text-sm">
-                      <div className="font-semibold">{day.date} ({day.weekday})</div>
-                      <div className={`text-xs truncate max-w-[120px] lg:max-w-[150px] ${
-                        isSelected ? "text-indigo-250" : "text-slate-400"
-                      }`}>
-                        {day.items[day.items.length - 1].place.split("→")[0].split("店")[0]}...
-                      </div>
+                      {day.items[day.items.length - 1].place.split("→")[0].split("店")[0]}...
                     </div>
                   </div>
-                  <span className="text-xs font-mono font-bold opacity-80">
+                  <span className="shrink-0 text-xs font-mono font-bold opacity-80 whitespace-nowrap">
                     {day.items.length} 站
                   </span>
                 </button>
