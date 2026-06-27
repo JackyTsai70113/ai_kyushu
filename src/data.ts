@@ -117,21 +117,21 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     date: "2026/07/05",
     weekday: "日",
     title: "7/5 阿蘇日建議行程",
-    subTitle: "草千里、火山口、GRASS LAND 午餐、大觀峰，午後依體力取捨",
+    subTitle: "草千里、火山口、砂千里之濱、GRASS LAND 午餐、大觀峰，午後依體力取捨",
     hotel: "南阿蘇 CAN LI ASSO 自炊包棟別墅",
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=32.8234378,131.0261628",
     hotelImageUrl: "https://owners-inn.com/wp/wp-content/uploads/2025/08/20250730_106-1-scaled.jpg",
     hotelImageSourceUrl: "https://owners-inn.com/?p=18895",
     hotelImageSourceName: "Owners-Inn 官方住宿頁",
-    mainTheme: "草千里放電 ｜ 火山口必看 ｜ 大觀峰與午後彈性",
-    note: "住：CAN LI ASSO。依 7/5 阿蘇日建議時程：上午草千里與火山口，中午 CAFE & SHOP GRASS LAND；午餐後先到阿蘇車站農產品店買晚餐，再去大觀峰與黑川溫泉短散策。",
+    mainTheme: "草千里放電 ｜ 火山口與砂千里 ｜ 大觀峰與午後彈性",
+    note: "住：CAN LI ASSO。依 7/5 阿蘇日建議時程：上午草千里、火山口與砂千里之濱，中午 CAFE & SHOP GRASS LAND；午餐後先到阿蘇車站農產品店買晚餐，再去大觀峰與黑川溫泉短散策。",
     meals: {
       breakfast: "於別墅享用：前一日在 MERUKORO、Frein 超市或高森周邊採購的麵包、牛奶、水果與簡單早餐",
       lunch: "CAFE & SHOP GRASS LAND：草千里旁午餐，避免下山找餐廳",
       dinner: "17:00 前在阿蘇車站農產品店／道之驛阿蘇採買：阿蘇高菜飯糰、在地蔬果、熟食便當、牛奶甜點，回 CAN LI ASSO 別墅享用"
     },
     weatherForecast: "阿蘇火山口與草千里屬中高海拔（標高約 1,140m），7 月山頂氣溫僅約 18°C~23°C，風勢甚猛、常現濃霧。紫外線偏高強，全體請備妥輕巧抗風防寒外套、太陽帽與遮陽傘。",
-    rainBackup: "阿蘇火山和中岳火山口極易受大雨或濃霧影響封鎖。若遭遇封鎖，火山口段改去阿蘇火山博物館；午餐仍保留 CAFE & SHOP GRASS LAND。晚餐採買固定放在大觀峰之前；下午若黑川散策遇雨，改為短停拍照或直接回 CAN LI ASSO。",
+    rainBackup: "阿蘇火山和中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，火山口段改為阿蘇火山博物館，或改草千里越野車：一人一小時 6,000 日圓，從草千里之濱咖啡廳那邊買票搭車；午餐仍保留 CAFE & SHOP GRASS LAND。晚餐採買固定放在大觀峰之前；下午若黑川散策遇雨，改為短停拍照或直接回 CAN LI ASSO。",
     gasStationTip: "山區路段加油站較少。建議在中午山下至阿蘇市區用餐完，可在市區 【ENEOS】加油站加滿常規 Regular 油（Mantan），以策安全。",
     items: [
       {
@@ -155,13 +155,22 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         time: "10:30 - 11:10",
         place: "阿蘇中岳火山口 / 阿蘇火山博物館（雨天備案）",
         move: "車程自草千里約 10 分鐘",
-        plan: "阿蘇火山口是重點景點，天候與管制允許就上火山口；若管制，立刻改阿蘇火山博物館，不在山路上浪費時間。",
-        memo: "停車：阿蘇中岳火山口收費停車場 / 草千里停車場。火山口實時狀況需隨時在車上刷網頁確認。",
+        plan: "阿蘇火山口是重點景點，天候與管制允許就上火山口；若管制，立刻改阿蘇火山博物館，或回草千里安排越野車，不在山路上浪費時間。",
+        memo: "停車：阿蘇中岳火山口收費停車場 / 草千里停車場。火山口實時狀況需隨時在車上刷網頁確認。火山口不開放時，草千里越野車可作為備案：一人一小時 6,000 日圓，從草千里之濱咖啡廳那邊買票搭車。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.884907,131.0849344",
         category: "nature",
       },
       {
-        time: "11:15 - 12:15",
+        time: "11:10 - 11:30",
+        place: "砂千里之濱短停",
+        move: "火山口周邊短程移動",
+        plan: "新增砂千里之濱作為阿蘇火山口周邊景點。若天候與管制允許，安排短停看黑色火山砂地形、拍照後回草千里午餐。",
+        memo: "風大、地面較裸露，長輩與小孩以短停為主；若火山口封鎖、濃霧或路況不佳，直接跳過，改草千里越野車或阿蘇火山博物館。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%A0%82%E5%8D%83%E9%87%8C%E4%B9%8B%E6%BF%B1",
+        category: "nature",
+      },
+      {
+        time: "11:35 - 12:25",
         place: "CAFE & SHOP GRASS LAND 午餐",
         move: "火山口回草千里約 10 分鐘",
         plan: "中餐安排在 CAFE & SHOP GRASS LAND，吃完再買飲料與點心，不下山折返找餐廳。",
@@ -170,11 +179,11 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "food",
       },
       {
-        time: "12:20 - 12:50",
+        time: "12:30 - 12:55",
         place: "草千里商店 / 霜淇淋 / 廁所休息",
         move: "餐後原地補給",
-        plan: "餐後在草千里商店補水、買霜淇淋與上廁所，整理好嬰兒車與車上點心後再往大觀峰。",
-        memo: "這段是為長輩與小孩留的緩衝，不急著移動比較舒服。",
+        plan: "餐後在草千里商店補水、買霜淇淋與上廁所，整理好嬰兒車與車上點心後再往大觀峰。若火山口不開放且體力足夠，可在這段改買草千里越野車票。",
+        memo: "這段是為長輩與小孩留的緩衝，不急著移動比較舒服。越野車備案：一人一小時 6,000 日圓，從草千里之濱咖啡廳那邊買票搭車。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=32.8818249,131.0533279",
         category: "shop",
       },
@@ -591,6 +600,10 @@ export const TRAVEL_GUIDE_INFO = {
     {
       title: "🔥 阿蘇火山中岳火口實時管制確認",
       content: "阿蘇火山是極其活躍的活火山，會排放大量具有毒性的二氧化硫與硫化氫氣體。管制分為【青(可上山)、黃(老人氣喘呼吸道敏感者停)、紅(全面封閉關閉)】。出發上車前，一定要打開網頁『阿蘇火山火口規制情報』實時查看。若遇到大霧或高氣體濃度關閉，請果斷改去草千里，千萬不要強行上山。"
+    },
+    {
+      title: "草千里越野車與砂千里之濱備案",
+      content: "砂千里之濱新增為阿蘇火山口周邊短停景點；若火山口不開放，行程改草千里越野車或阿蘇火山博物館。草千里越野車作為火山口管制備案，一人一小時 6,000 日圓，從草千里之濱咖啡廳那邊買票搭車。"
     },
     {
       title: "高千穗峽步道與長輩兒童防護",
