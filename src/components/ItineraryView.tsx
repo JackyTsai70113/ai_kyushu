@@ -168,7 +168,7 @@ export default function ItineraryView() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 min-w-0">
       {/* Sidebar: Day Buttons & Search */}
       <div className="lg:col-span-1 space-y-6">
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs">
@@ -250,7 +250,7 @@ export default function ItineraryView() {
       </div>
 
       {/* Main Content Area: Itinerary Schedule Details */}
-      <div className="lg:col-span-3 space-y-6">
+      <div className="lg:col-span-3 space-y-6 min-w-0">
         <AnimatePresence mode="wait">
           {searchQuery.trim().length >= 2 ? (
             // Search Results View
@@ -344,10 +344,10 @@ export default function ItineraryView() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25 }}
-              className="space-y-6"
+              className="space-y-6 min-w-0"
             >
               {/* Day Header Summary */}
-              <div className="bg-slate-900 text-white p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-md border border-slate-800">
+              <div className="min-w-0 bg-slate-900 text-white p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-md border border-slate-800">
                 <div className="absolute right-0 bottom-0 translate-y-6 translate-x-6 opacity-5 pointer-events-none">
                   <Compass className="w-64 h-64 text-white" />
                 </div>
@@ -361,33 +361,33 @@ export default function ItineraryView() {
                       {selectedDay.date} ({selectedDay.weekday})
                     </span>
                   </div>
-                  <h2 className="text-xl md:text-2xl font-bold tracking-tight text-white">
+                  <h2 className="text-xl md:text-2xl font-bold tracking-tight text-white break-words">
                     {selectedDay.title}
                   </h2>
-                  <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-2xl font-light">
+                  <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-2xl font-light break-words">
                     {selectedDay.subTitle}
                   </p>
                   
                   <div className="pt-4 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                    <div className="bg-slate-950/40 p-3 rounded-xl border border-slate-800">
+                    <div className="min-w-0 bg-slate-950/40 p-3 rounded-xl border border-slate-800">
                       <span className="text-indigo-400 font-semibold block mb-0.5">🏨 今日落腳下榻</span>
                       {selectedDay.hotelUrl ? (
                         <a 
                           href={selectedDay.hotelUrl} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="font-bold text-white hover:underline hover:text-indigo-300 inline-flex items-center gap-1"
+                          className="font-bold text-white hover:underline hover:text-indigo-300 inline-flex min-w-0 flex-wrap items-center gap-1 break-all"
                         >
                           {selectedDay.hotel}
                           <ExternalLink className="w-3.5 h-3.5 inline" />
                         </a>
                       ) : (
-                        <span className="font-bold text-white">{selectedDay.hotel}</span>
+                        <span className="font-bold text-white break-all">{selectedDay.hotel}</span>
                       )}
                     </div>
-                    <div className="bg-slate-950/40 p-3 rounded-xl border border-slate-800">
+                    <div className="min-w-0 bg-slate-950/40 p-3 rounded-xl border border-slate-800">
                       <span className="text-indigo-400 font-semibold block mb-0.5">🌟 當日焦點主軸</span>
-                      <span className="font-bold text-indigo-50">{selectedDay.mainTheme}</span>
+                      <span className="font-bold text-indigo-50 break-all">{selectedDay.mainTheme}</span>
                     </div>
                   </div>
 
@@ -484,21 +484,21 @@ export default function ItineraryView() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedDay.meals && (
-                    <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-3">
+                    <div className="min-w-0 bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-3">
                       <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                         <Utensils className="w-4 h-4 text-amber-600 animate-pulse" />
                         🍱 今日三餐飲食指南
                       </h3>
                       <div className="space-y-2.5 text-xs text-slate-600">
-                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                        <div className="break-words bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
                           <span className="font-bold text-amber-800 block mb-0.5">🥐 活力早餐</span>
                           {selectedDay.meals.breakfast}
                         </div>
-                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                        <div className="break-words bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
                           <span className="font-bold text-amber-800 block mb-0.5">🍱 特色午餐</span>
                           {selectedDay.meals.lunch}
                         </div>
-                        <div className="bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
+                        <div className="break-words bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
                           <span className="font-bold text-amber-800 block mb-0.5">🍛 豐盛晚餐</span>
                           {selectedDay.meals.dinner}
                         </div>
@@ -565,7 +565,7 @@ export default function ItineraryView() {
                       </span>
 
                       {/* Schedule item card */}
-                      <div className="bg-white p-5 rounded-2xl border border-slate-100 hover:border-indigo-205 hover:shadow-xs transition-all duration-200">
+                      <div className="min-w-0 bg-white p-5 rounded-2xl border border-slate-100 hover:border-indigo-205 hover:shadow-xs transition-all duration-200">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3 pb-3 border-b border-dashed border-slate-100">
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="text-xs font-bold text-slate-800 font-mono flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-md">
@@ -609,17 +609,17 @@ export default function ItineraryView() {
                         </div>
 
                         <div className="space-y-3">
-                          <h3 className="text-sm md:text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                          <h3 className="break-all text-sm md:text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
                             {item.place}
                           </h3>
 
                           {item.move && (
-                            <div className="text-xs font-medium text-orange-700 bg-amber-50/70 py-1.5 px-3 rounded-lg border border-amber-100/50 inline-block">
+                            <div className="max-w-full break-words text-xs font-medium text-orange-700 bg-amber-50/70 py-1.5 px-3 rounded-lg border border-amber-100/50 inline-block">
                               🚗 交通指引：{item.move}
                             </div>
                           )}
 
-                          <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                          <p className="break-words text-xs md:text-sm text-slate-600 leading-relaxed">
                             {item.plan}
                           </p>
 
@@ -629,7 +629,7 @@ export default function ItineraryView() {
                                 <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
                                 重要叮嚀 / 資訊
                               </div>
-                              <p className="leading-relaxed">{item.memo}</p>
+                              <p className="break-words leading-relaxed">{item.memo}</p>
                             </div>
                           )}
                         </div>

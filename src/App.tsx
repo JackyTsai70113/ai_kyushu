@@ -261,7 +261,7 @@ export default function App() {
               <span className="tracking-wide">2026 九州幸福家庭自駕行 ｜ 專業旅行手冊</span>
             </div>
             <p className="max-w-2xl mx-auto text-slate-500 leading-relaxed font-light text-[11px] sm:text-xs">
-              本手冊專為本次六大一小自駕行程定制，所有景點、白川水源、高千穗峽谷、勝烈亭與道之驛路線皆經精準時序安排。天候變换請即時與口袋導遊進行互動查詢。
+              本手冊專為本次六大一小自駕行程定制，每日景點、餐廳、住宿與自駕路線皆依最新時序安排。天候變換請即時與口袋導遊進行互動查詢。
             </p>
             <div className="text-[10px] text-slate-650 font-mono">
               © 2026 九州自駕樂活旅遊手冊 ｜ Styled with Professional Polish Theme Theme

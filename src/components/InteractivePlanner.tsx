@@ -54,7 +54,7 @@ export default function InteractivePlanner() {
       setBudgetItems([
         { id: "b1", title: "TOYOTA Rent a Car W3 等級自駕 6 天租車資", amountYen: 95000, category: "rental", payer: "共同公費" },
         { id: "b2", title: "CAN LI ASSO 7/4-7/6 連住 2 晚住宿費", amountYen: 54000, category: "hotel", payer: "共同公費" },
-        { id: "b3", title: "鍋瀑布或菊池溪谷門票預備金", amountYen: 8000, category: "ticket", payer: "共同公費" }
+        { id: "b3", title: "草千里停車與阿蘇山上區域門票預備金", amountYen: 8000, category: "ticket", payer: "共同公費" }
       ]);
     }
 
