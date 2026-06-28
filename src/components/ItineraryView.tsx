@@ -414,7 +414,7 @@ export default function ItineraryView() {
                         今日預計自駕路線圖
                       </h3>
                       <p className="text-xs text-slate-500 mt-1">
-                        依照本日行程順序自動產生，實際導航請以 Google Maps 當下路況為準。
+                        依照本日正式景點與餐廳順序串接，Google Maps 會依當下路況計算各段道路。
                       </p>
                     </div>
                     <a
