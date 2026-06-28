@@ -28,6 +28,13 @@ import {
 export default function App() {
   const [activeSegment, setActiveSegment] = useState<"itinerary" | "guide" | "phrases" | "planner" | "ai" | "overview">("itinerary");
   const [currentUtcTime, setCurrentUtcTime] = useState("");
+  const [phraseSearchQuery, setPhraseSearchQuery] = useState("");
+
+  const openDiningPhrase = (query: string) => {
+    setPhraseSearchQuery(query);
+    setActiveSegment("phrases");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     // Elegant dynamic clock indicating current action window
@@ -245,9 +252,9 @@ export default function App() {
 
           {/* Dynamic Component Content Rendering */}
           <div className="space-y-6">
-            {activeSegment === "itinerary" && <ItineraryView />}
+            {activeSegment === "itinerary" && <ItineraryView onOpenDiningPhrase={openDiningPhrase} />}
             {activeSegment === "guide" && <TravelHandbook />}
-            {activeSegment === "phrases" && <JapanesePhrases />}
+            {activeSegment === "phrases" && <JapanesePhrases initialSearchQuery={phraseSearchQuery} />}
             {activeSegment === "planner" && <InteractivePlanner />}
             {activeSegment === "ai" && <AiAssistant />}
           </div>

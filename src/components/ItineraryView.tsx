@@ -87,7 +87,44 @@ const buildRouteUrls = (points: Array<{ label: string; query: string }>) => {
   };
 };
 
-export default function ItineraryView() {
+const DINING_PHRASE_QUERIES = [
+  "ASO MILK FACTORY",
+  "MERUKORO",
+  "草千里",
+  "山麓キッチン",
+  "道の駅 阿蘇",
+  "黑川",
+  "黒川",
+  "やま康",
+  "久木野庵",
+  "熊本新市街",
+  "黑亭",
+  "黒亭",
+  "天ぷら たかお",
+  "資さん",
+  "城彩苑",
+  "一心堂",
+  "SWISS",
+  "勝烈亭",
+  "REF 熊本",
+  "熊本空港",
+  "熊本機場",
+  "星宇",
+];
+
+const getDiningPhraseQuery = (item: ScheduleItem) => {
+  if (!["food", "shop", "rest"].includes(item.category)) return null;
+  const source = `${item.place} ${item.plan} ${item.memo}`;
+  return DINING_PHRASE_QUERIES.find((query) => source.includes(query)) || null;
+};
+
+const getMealPhraseQuery = (mealText: string) => DINING_PHRASE_QUERIES.find((query) => mealText.includes(query)) || null;
+
+type ItineraryViewProps = {
+  onOpenDiningPhrase?: (query: string) => void;
+};
+
+export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps) {
   const [selectedDayNum, setSelectedDayNum] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedItemId, setCopiedItemId] = useState<string | null>(null);
@@ -263,7 +300,7 @@ export default function ItineraryView() {
                 <div className="space-y-4">
                   {foundSpots.map(({ dayNum, item, index }) => {
                     const styles = getCategoryStyles(item.category);
-                    const CustomIcon = categoryIcons[item.category] || Compass;
+                    const diningQuery = getDiningPhraseQuery(item);
                     return (
                       <div key={`${dayNum}-${index}`} className="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:border-indigo-200 transition-all flex flex-col md:flex-row gap-4 justify-between items-start">
                         <div className="space-y-2">
@@ -302,6 +339,15 @@ export default function ItineraryView() {
                               <MapPin className="w-3 h-3" />
                               導航 Map
                             </a>
+                          )}
+                          {diningQuery && onOpenDiningPhrase && (
+                            <button
+                              onClick={() => onOpenDiningPhrase(diningQuery)}
+                              className="text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 transition-all px-3 py-1.5 rounded-lg font-medium flex items-center justify-center gap-1 w-full text-center"
+                            >
+                              <Utensils className="w-3 h-3" />
+                              餐廳日文
+                            </button>
                           )}
                           <button
                             onClick={() => {
@@ -478,7 +524,18 @@ export default function ItineraryView() {
                           {selectedDay.meals.breakfast}
                         </div>
                         <div className="break-words bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
-                          <span className="font-bold text-amber-800 block mb-0.5">🍱 特色午餐</span>
+                          <div className="mb-0.5 flex flex-wrap items-center justify-between gap-2">
+                            <span className="font-bold text-amber-800">🍱 特色午餐</span>
+                            {onOpenDiningPhrase && getMealPhraseQuery(selectedDay.meals.lunch) && (
+                              <button
+                                onClick={() => onOpenDiningPhrase(getMealPhraseQuery(selectedDay.meals.lunch) || "")}
+                                className="inline-flex items-center gap-1 rounded-lg border border-amber-200 bg-white px-2 py-1 text-[11px] font-bold text-amber-700 hover:bg-amber-50"
+                              >
+                                <Utensils className="h-3 w-3" />
+                                午餐日文
+                              </button>
+                            )}
+                          </div>
                           {selectedDay.meals.lunch}
                         </div>
                         <div className="break-words bg-amber-50/30 p-2.5 rounded-xl border border-amber-100/30">
@@ -537,6 +594,7 @@ export default function ItineraryView() {
                   const styles = getCategoryStyles(item.category);
                   const uniqueId = `${selectedDay.dayNum}-${idx}`;
                   const isCopied = copiedItemId === uniqueId;
+                  const diningQuery = getDiningPhraseQuery(item);
 
                   return (
                     <div id={`schedule-item-${uniqueId}`} key={uniqueId} className="relative group">
@@ -576,6 +634,15 @@ export default function ItineraryView() {
                                 <MapPin className="w-3 h-3" />
                                 導航地圖
                               </a>
+                            )}
+                            {diningQuery && onOpenDiningPhrase && (
+                              <button
+                                onClick={() => onOpenDiningPhrase(diningQuery)}
+                                className="text-xs text-amber-700 bg-amber-50 hover:bg-amber-100/80 px-2.5 py-1.5 rounded-lg font-medium inline-flex items-center gap-1 border border-amber-100 transition-all"
+                              >
+                                <Utensils className="w-3 h-3" />
+                                餐廳日文
+                              </button>
                             )}
                             <button
                               onClick={() => handleCopyMemo(item, idx)}

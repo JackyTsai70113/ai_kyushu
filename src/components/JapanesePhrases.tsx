@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   BookOpen,
   Check,
@@ -197,7 +197,11 @@ const parseCorePhrases = (raw: string): CorePhrase[] =>
     })
     .filter((item) => item.zh && item.ja);
 
-export default function JapanesePhrases() {
+type JapanesePhrasesProps = {
+  initialSearchQuery?: string;
+};
+
+export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhrasesProps) {
   const [activeGroup, setActiveGroup] = useState<keyof typeof GROUP_LABELS>("core");
   const [activeDocId, setActiveDocId] = useState("phone");
   const [searchQuery, setSearchQuery] = useState("");
@@ -206,6 +210,14 @@ export default function JapanesePhrases() {
 
   const parsedDocs = useMemo(parseDocs, []);
   const corePhrases = useMemo(() => parseCorePhrases(ankiCore), []);
+
+  useEffect(() => {
+    if (!initialSearchQuery) return;
+    setActiveGroup("field");
+    setActiveDocId("dining");
+    setSearchQuery(initialSearchQuery);
+  }, [initialSearchQuery]);
+
   const activeDoc = parsedDocs.find((doc) => doc.id === activeDocId) || parsedDocs[0];
   const totalPhraseCount = parsedDocs.reduce((sum, doc) => sum + doc.phraseCount, 0) + corePhrases.length;
 
