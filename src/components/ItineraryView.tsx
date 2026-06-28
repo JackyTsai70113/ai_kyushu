@@ -37,12 +37,6 @@ const getGoogleMapsQuery = (mapUrl?: string) => {
 
 const buildRoutePoints = (day: ItineraryDay) => {
   const rawPoints = [
-    day.hotelUrl
-      ? {
-          label: day.hotel,
-          query: getGoogleMapsQuery(day.hotelUrl),
-        }
-      : null,
     ...day.items
       .filter((item) => item.mapUrl)
       .map((item) => ({
@@ -57,17 +51,6 @@ const buildRoutePoints = (day: ItineraryDay) => {
     if (!point.query || previous?.query === point.query) return;
     points.push(point);
   });
-
-  if (points.length > 1 && points[0].query === points[points.length - 1].query) {
-    return points;
-  }
-
-  if (day.hotelUrl && points.length > 1) {
-    const hotelQuery = getGoogleMapsQuery(day.hotelUrl);
-    if (points[points.length - 1].query !== hotelQuery) {
-      points.push({ label: day.hotel, query: hotelQuery });
-    }
-  }
 
   return points;
 };

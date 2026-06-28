@@ -71,7 +71,7 @@ export default function App() {
               <span className="text-[11px] font-bold text-slate-400 tracking-wider">最新修正進度</span>
             </div>
             <p className="text-slate-350 text-xs leading-relaxed font-light">
-              Day 2 新增砂千里之濱；火山口管制時改草千里越野車或阿蘇火山博物館。
+              Day 1 從熊本機場下飛機開始並加入砂千里之濱；Day 2 阿蘇山上區域只保留火山口。
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function App() {
                   2026 幸福自駕核心修正提醒
                 </h3>
                 <p className="text-xs sm:text-sm text-indigo-950 leading-relaxed font-light">
-                  本版手冊已改為 <strong>高千穗峽步道散策、Day 2 草千里咖啡午餐、砂千里之濱、黑川散策</strong>。7/7 10:00 記得選回程 JX847 機位；若遇阿蘇火山管制，改草千里越野車或阿蘇火山博物館。
+                  本版手冊已改為 <strong>Day 1 熊本機場起點、MERUKORO、草千里 Green Park 午餐、砂千里之濱；Day 2 阿蘇火山口；Day 3 CAN LI ASSO 起點、やま康或久木野庵、白川水源</strong>。7/7 10:00 記得選回程 JX847 機位。
                 </p>
               </div>
             </div>
