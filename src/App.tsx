@@ -207,7 +207,7 @@ export default function App() {
                   2026 幸福自駕核心修正提醒
                 </h3>
                 <p className="text-xs sm:text-sm text-indigo-950 leading-relaxed font-light">
-                  本版手冊已改為 <strong>Day 1 熊本機場起點、MERUKORO、草千里 Green Park 午餐、砂千里之濱；Day 2 阿蘇火山口；Day 3 CAN LI ASSO 起點、やま康或久木野庵、白川水源</strong>。7/7 10:00 記得選回程 JX847 機位。
+                  本版手冊已改為 <strong>Day 1 熊本機場起點、MERUKORO、草千里 Green Park 午餐、砂千里之濱；Day 2 阿蘇火山口、ASO MILK FACTORY 午餐；Day 3 CAN LI ASSO 起點、高千穗、白川水源</strong>。7/7 10:00 記得選回程 JX847 機位。
                 </p>
               </div>
             </div>
