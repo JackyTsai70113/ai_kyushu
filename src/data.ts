@@ -117,13 +117,13 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     date: "2026/07/05",
     weekday: "日",
     title: "7/5 阿蘇火山口、ASO MILK FACTORY、大觀峰",
-    subTitle: "第二天阿蘇山上區域只保留阿蘇中岳火山口，管制就直接轉 ASO MILK FACTORY，午後視時間大觀峰、鍋ヶ滝或黑川短停",
+    subTitle: "第二天阿蘇山上區域只保留阿蘇中岳火山口，管制就直接轉 ASO MILK FACTORY，午後大觀峰、瀬の本レストハウス、黑川短停",
     hotel: "南阿蘇 CAN LI ASSO 自炊包棟別墅",
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=CAN%20LI%20ASSO%20%E5%8D%97%E9%98%BF%E8%98%87",
     hotelImageUrl: "https://owners-inn.com/wp/wp-content/uploads/2025/08/20250730_106-1-scaled.jpg",
     hotelImageSourceUrl: "https://owners-inn.com/?p=18895",
     hotelImageSourceName: "Owners-Inn 官方住宿頁",
-    mainTheme: "阿蘇中岳火山口 ｜ ASO MILK FACTORY 深度停留 ｜ 大觀峰 ｜ 鍋ヶ滝或黑川短停",
+    mainTheme: "阿蘇中岳火山口 ｜ ASO MILK FACTORY 深度停留 ｜ 大觀峰 ｜ 瀬の本レストハウス ｜ 黑川短停",
     note: "住：CAN LI ASSO。砂千里之濱已改到 Day 1，第二天阿蘇山上區域只保留阿蘇中岳火山口；若火山口管制，直接提早前往 ASO MILK FACTORY 午餐與園區停留。",
     meals: {
       breakfast: "於別墅享用：前一日在 MERUKORO、Frein 超市或高森周邊採購的麵包、牛奶、水果與簡單早餐",
@@ -131,7 +131,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
       dinner: "下午視時間在道の駅 阿蘇或高森／南阿蘇周邊補買熟食、蔬果與點心，回 CAN LI ASSO 別墅享用"
     },
     weatherForecast: "阿蘇火山口與草千里屬中高海拔（標高約 1,140m），7 月山頂氣溫僅約 18°C~23°C，風勢甚猛、常現濃霧。紫外線偏高強，全體請備妥輕巧抗風防寒外套、太陽帽與遮陽傘。",
-    rainBackup: "阿蘇中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，直接前往 ASO MILK FACTORY，把時間留給餐廳、咖啡、甜點工房、起司工房、商店與玫瑰園。午後若天氣與體力允許，二選一：有預約且不繞路才去鍋ヶ滝；否則提早到黑川溫泉街散策。大雨時直接回 CAN LI ASSO。",
+    rainBackup: "阿蘇中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，直接前往 ASO MILK FACTORY，把時間留給餐廳、咖啡、甜點工房、起司工房、商店與玫瑰園。午後若天氣與體力允許，大觀峰後先到瀬の本レストハウス休息、上洗手間、看九重連山與買阿蘇／大分由布院伴手禮；有預約且不繞路才加鍋ヶ滝，否則提早到黑川溫泉街散策。大雨時直接回 CAN LI ASSO。",
     gasStationTip: "山區路段加油站較少。建議在中午山下至阿蘇市區用餐完，可在市區 【ENEOS】加油站加滿常規 Regular 油（Mantan），以策安全。",
     items: [
       {
@@ -187,6 +187,15 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "nature",
       },
       {
+        time: "13:55 - 14:25",
+        place: "瀬の本レストハウス (Senomoto Resthouse)",
+        move: "大觀峰後往黑川方向順路短停",
+        plan: "進黑川溫泉街前，在大型高原休息站稍微活動筋骨、上洗手間、買阿蘇與大分由布院一帶土產伴手禮，也可補輕食與飲品。天氣好時可遠眺九重連山，作為大觀峰後的舒緩停靠點。",
+        memo: "導航請搜尋：瀬の本レストハウス / Senomoto Resthouse。若 ASO MILK FACTORY 或大觀峰停太久，這站可縮短成上廁所與買飲料；若天候差，保留室內休息與伴手禮採買。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%80%AC%E3%81%AE%E6%9C%AC%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%20Senomoto%20Resthouse",
+        category: "rest",
+      },
+      {
         time: "14:00 - 15:00 可選",
         place: "鍋ヶ滝公園（有預約且順路才去）",
         move: "大觀峰或 ASO MILK FACTORY 往小國町方向；未預約不硬排",
@@ -195,11 +204,11 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "nature",
       },
       {
-        time: "14:05 - 14:40",
+        time: "14:35 - 15:15",
         place: "黑川溫泉街短散策 / 風の舎 / 湯音 / Patisserie Roku",
-        move: "大觀峰後車程約 25-35 分鐘",
+        move: "瀬の本レストハウス後車程約 10-15 分鐘",
         plan: "保留黑川溫泉散策，改成短停不泡湯：走一小段溫泉街、買甜點或茶飲、拍照後準時上車。若火山口管制而提早下山，也可以把黑川提前並延長一點。",
-        memo: "16:20 前離開黑川，回別墅時間較穩。若大觀峰、ASO MILK FACTORY 或鍋ヶ滝停留超過預期，黑川只短停拍照或直接回別墅。高人氣優先點餐指引｜不限飲食：1. 溫泉布丁，原因是溫泉街常見人氣甜點，份量小也好入口；2. 泡芙或蛋糕，原因是甜點店熱門外帶品項，不影響後續移動；3. 咖啡或茶飲，原因是搭配甜點最穩，山路前也能休息醒腦。無肉塊：無肉甜點或無酒精飲品；蛋奶與吉利丁可依個人接受度，重點避開明顯肉塊。",
+        memo: "16:20 前離開黑川，回別墅時間較穩。若大觀峰、ASO MILK FACTORY、瀬の本レストハウス或鍋ヶ滝停留超過預期，黑川只短停拍照或直接回別墅。高人氣優先點餐指引｜不限飲食：1. 溫泉布丁，原因是溫泉街常見人氣甜點，份量小也好入口；2. 泡芙或蛋糕，原因是甜點店熱門外帶品項，不影響後續移動；3. 咖啡或茶飲，原因是搭配甜點最穩，山路前也能休息醒腦。無肉塊：無肉甜點或無酒精飲品；蛋奶與吉利丁可依個人接受度，重點避開明顯肉塊。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%BB%92%E5%B7%9D%E6%B8%A9%E6%B3%89%20%E9%A2%A8%E3%81%AE%E8%88%8E",
         category: "rest",
       },
