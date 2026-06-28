@@ -117,21 +117,21 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     date: "2026/07/05",
     weekday: "日",
     title: "7/5 阿蘇火山口、ASO MILK FACTORY、大觀峰",
-    subTitle: "第二天阿蘇山上區域只保留阿蘇中岳火山口，午餐正式改 ASO MILK FACTORY，午後大觀峰與黑川短停",
+    subTitle: "第二天阿蘇山上區域只保留阿蘇中岳火山口，管制就直接轉 ASO MILK FACTORY，午後視時間大觀峰、鍋ヶ滝或黑川短停",
     hotel: "南阿蘇 CAN LI ASSO 自炊包棟別墅",
     hotelUrl: "https://www.google.com/maps/search/?api=1&query=CAN%20LI%20ASSO%20%E5%8D%97%E9%98%BF%E8%98%87",
     hotelImageUrl: "https://owners-inn.com/wp/wp-content/uploads/2025/08/20250730_106-1-scaled.jpg",
     hotelImageSourceUrl: "https://owners-inn.com/?p=18895",
     hotelImageSourceName: "Owners-Inn 官方住宿頁",
-    mainTheme: "阿蘇中岳火山口 ｜ ASO MILK FACTORY 午餐 ｜ 大觀峰 ｜ 黑川短停",
-    note: "住：CAN LI ASSO。砂千里之濱已改到 Day 1，第二天阿蘇山上區域只保留阿蘇中岳火山口；若火山口管制，改阿蘇火山博物館或提早前往 ASO MILK FACTORY 午餐。",
+    mainTheme: "阿蘇中岳火山口 ｜ ASO MILK FACTORY 深度停留 ｜ 大觀峰 ｜ 鍋ヶ滝或黑川短停",
+    note: "住：CAN LI ASSO。砂千里之濱已改到 Day 1，第二天阿蘇山上區域只保留阿蘇中岳火山口；若火山口管制，直接提早前往 ASO MILK FACTORY 午餐與園區停留。",
     meals: {
       breakfast: "於別墅享用：前一日在 MERUKORO、Frein 超市或高森周邊採購的麵包、牛奶、水果與簡單早餐",
-      lunch: "ASO MILK FACTORY（阿部牧場直營店）：午餐、ASO MILK 牛奶、優格、布丁、起司與霜淇淋",
+      lunch: "ASO MILK FACTORY（阿部牧場直營店）：午餐、ASO MILK 牛奶、優格、布丁、起司、霜淇淋、甜點工房與玫瑰園",
       dinner: "下午視時間在道の駅 阿蘇或高森／南阿蘇周邊補買熟食、蔬果與點心，回 CAN LI ASSO 別墅享用"
     },
     weatherForecast: "阿蘇火山口與草千里屬中高海拔（標高約 1,140m），7 月山頂氣溫僅約 18°C~23°C，風勢甚猛、常現濃霧。紫外線偏高強，全體請備妥輕巧抗風防寒外套、太陽帽與遮陽傘。",
-    rainBackup: "阿蘇中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，改阿蘇火山博物館或直接前往 ASO MILK FACTORY 午餐。下午若大觀峰或黑川散策遇雨，改為短停拍照或直接回 CAN LI ASSO。",
+    rainBackup: "阿蘇中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，直接前往 ASO MILK FACTORY，把時間留給餐廳、咖啡、甜點工房、起司工房、商店與玫瑰園。午後若天氣與體力允許，二選一：有預約且不繞路才去鍋ヶ滝；否則提早到黑川溫泉街散策。大雨時直接回 CAN LI ASSO。",
     gasStationTip: "山區路段加油站較少。建議在中午山下至阿蘇市區用餐完，可在市區 【ENEOS】加油站加滿常規 Regular 油（Mantan），以策安全。",
     items: [
       {
@@ -145,10 +145,10 @@ export const ITINERARY_DATA: ItineraryDay[] = [
       },
       {
         time: "09:30 - 10:30",
-        place: "阿蘇中岳火山口 / 阿蘇火山博物館（管制備案）",
+        place: "阿蘇中岳火山口",
         move: "抵達後依現場管制決定",
-        plan: "阿蘇火山口是第二天唯一保留的阿蘇山上核心景點，天候與管制允許就上火山口；若管制，立刻改阿蘇火山博物館，不在山路上浪費時間。",
-        memo: "停車：阿蘇中岳火山口收費停車場 / 草千里停車場。火山口實時狀況需隨時在車上刷網頁確認。砂千里已排 Day 1，不在 Day 2 重複安排。",
+        plan: "阿蘇火山口是第二天唯一保留的阿蘇山上核心景點，天候與管制允許才上火山口；若管制，立刻下山往 ASO MILK FACTORY。",
+        memo: "停車：阿蘇中岳火山口收費停車場 / 草千里停車場。火山口實時狀況需隨時在車上刷網頁確認。砂千里已排 Day 1，不在 Day 2 重複安排；若現場封閉，不在山路上等待。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%98%BF%E8%98%87%E4%B8%AD%E5%B2%B3%E7%81%AB%E5%8F%A3",
         category: "nature",
       },
@@ -156,18 +156,26 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         time: "10:30 - 11:25",
         place: "阿蘇中岳火山口 → ASO MILK FACTORY",
         move: "自駕約 30-45 分鐘，下山往阿蘇市小里",
-        plan: "火山口結束後下山到 ASO MILK FACTORY（阿部牧場直營店），第二天午餐正式安排在這裡。",
-        memo: "若火山口管制，這段會提早；可在 ASO MILK FACTORY 多留一點時間用餐、休息與買乳製品伴手禮。",
+        plan: "火山口結束後下山到 ASO MILK FACTORY（阿部牧場直營店），第二天午餐正式安排在這裡；若火山口管制，這段直接提早開始。",
+        memo: "若火山口管制，直接把時間留給 ASO MILK FACTORY。這樣長輩小孩可以更從容用餐、上廁所、買乳製品伴手禮與在園區散步。",
         category: "car",
       },
       {
         time: "11:25 - 12:35",
         place: "ASO MILK FACTORY（阿部牧場直營店）午餐",
         move: "抵達後用餐、採買乳製品、休息",
-        plan: "第二天中餐正式改到 ASO MILK FACTORY。午餐、ASO MILK 牛奶、優格、布丁、起司、霜淇淋或伴手禮在這裡一次處理。",
-        memo: "地址：熊本県阿蘇市小里781。官方資訊：Shop / Cafe 9:30-18:00，年中無休；仍建議出發前以 Google Maps 或官方頁確認當日營業。高人氣優先點餐指引｜不限飲食：1. ASO MILK 霜淇淋，原因是乳製品代表品項；2. 牛奶、優格或布丁，原因是好分食也可外帶；3. 咖啡或輕食，原因是下午還要移動。無肉塊：乳製品、甜點、飲品與輕食優先。",
+        plan: "第二天中餐正式改到 ASO MILK FACTORY。午餐、ASO MILK 牛奶、優格、布丁、起司、霜淇淋或伴手禮在這裡一次處理；若火山口管制，就把這站拉長成主活動。",
+        memo: "地址：熊本県阿蘇市小里781。官方與熊本觀光資訊顯示，園區有商店、咖啡、甜點工房、起司工房、餐廳與玫瑰園，可吃披薩、義大利麵、起司料理與 ASO MILK 甜點。高人氣優先點餐指引｜不限飲食：1. ASO MILK 霜淇淋，原因是乳製品代表品項；2. 牛奶、優格、布丁或 ASOMILKUCHEN 年輪蛋糕，原因是好分食也可外帶；3. 起司料理、披薩或義大利麵，原因是午餐更完整。無肉塊：乳製品、甜點、飲品、起司料理與素向輕食優先。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=ASO%20MILK%20FACTORY%20%E7%86%8A%E6%9C%AC%E7%9C%8C%E9%98%BF%E8%98%87%E5%B8%82%E5%B0%8F%E9%87%8C781",
         category: "food",
+      },
+      {
+        time: "12:35 - 13:00 可選",
+        place: "ASO MILK FACTORY 園區深度停留",
+        move: "園區內步行",
+        plan: "若火山口管制或大家想放慢，ASO MILK FACTORY 可多停留：看甜點工房、起司工房，逛商店買冷藏乳製品，天氣好再去玫瑰園散步拍照。",
+        memo: "這段是管制時的主要緩衝，不影響後面大觀峰或黑川。冷藏品請放保冷袋，車上避免日曬。",
+        category: "rest",
       },
       {
         time: "13:00 - 13:40",
@@ -179,11 +187,19 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "nature",
       },
       {
+        time: "14:00 - 15:00 可選",
+        place: "鍋ヶ滝公園（有預約且順路才去）",
+        move: "大觀峰或 ASO MILK FACTORY 往小國町方向；未預約不硬排",
+        plan: "若火山口管制讓時間變早、天氣穩、且已完成 web 事前預約，可改去鍋ヶ滝看寬約 20m 的水簾瀑布。未預約、下雨、長輩膝蓋不適或時間壓縮時，直接跳過。",
+        memo: "官方資訊：鍋ヶ滝為 web 事前預約制，開園 9:00-17:00，最終入園 16:30，入園費成人 300 円、小中學生 150 円。需走階梯與濕滑步道，請穿止滑鞋；大雨或安全因素可能臨時休園。導航請搜尋：鍋ヶ滝公園。",
+        category: "nature",
+      },
+      {
         time: "14:05 - 14:40",
         place: "黑川溫泉街短散策 / 風の舎 / 湯音 / Patisserie Roku",
         move: "大觀峰後車程約 25-35 分鐘",
-        plan: "保留黑川溫泉散策，改成短停不泡湯：走一小段溫泉街、買甜點或茶飲、拍照後準時上車。",
-        memo: "16:20 前離開黑川，回別墅時間較穩。若大觀峰或 ASO MILK FACTORY 停留超過預期，黑川只短停拍照或直接回別墅。高人氣優先點餐指引｜不限飲食：1. 溫泉布丁，原因是溫泉街常見人氣甜點，份量小也好入口；2. 泡芙或蛋糕，原因是甜點店熱門外帶品項，不影響後續移動；3. 咖啡或茶飲，原因是搭配甜點最穩，山路前也能休息醒腦。無肉塊：無肉甜點或無酒精飲品；蛋奶與吉利丁可依個人接受度，重點避開明顯肉塊。",
+        plan: "保留黑川溫泉散策，改成短停不泡湯：走一小段溫泉街、買甜點或茶飲、拍照後準時上車。若火山口管制而提早下山，也可以把黑川提前並延長一點。",
+        memo: "16:20 前離開黑川，回別墅時間較穩。若大觀峰、ASO MILK FACTORY 或鍋ヶ滝停留超過預期，黑川只短停拍照或直接回別墅。高人氣優先點餐指引｜不限飲食：1. 溫泉布丁，原因是溫泉街常見人氣甜點，份量小也好入口；2. 泡芙或蛋糕，原因是甜點店熱門外帶品項，不影響後續移動；3. 咖啡或茶飲，原因是搭配甜點最穩，山路前也能休息醒腦。無肉塊：無肉甜點或無酒精飲品；蛋奶與吉利丁可依個人接受度，重點避開明顯肉塊。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%BB%92%E5%B7%9D%E6%B8%A9%E6%B3%89%20%E9%A2%A8%E3%81%AE%E8%88%8E",
         category: "rest",
       },
@@ -548,7 +564,8 @@ export const TRAVEL_GUIDE_INFO = {
       title: "【阿蘇乳製品甜點】ASO MILK FACTORY",
       description: "阿部牧場直營的乳製品與甜點補給點，正式排在 Day 2 阿蘇火山口後作為午餐與乳製品甜點站，餐後再上大觀峰與黑川短停。",
       tips: [
-        "優先買 ASO MILK 牛奶、優格、布丁、起司與霜淇淋，第二天午餐與下午甜點一次處理。",
+        "如果阿蘇火山口管制，這裡直接升級為 Day 2 主活動。園區可用餐、喝咖啡、看甜點工房與起司工房、逛商店、買冷藏乳製品，天氣好再到玫瑰園散步。",
+        "優先買 ASO MILK 牛奶、優格、布丁、起司、霜淇淋與 ASOMILKUCHEN 年輪蛋糕，第二天午餐與下午甜點一次處理。",
         "官方資訊：Shop / Cafe 9:30-18:00，地址為熊本県阿蘇市小里781；出發前仍以 Google Maps 或官方頁確認當日營業。",
         "冷藏品買完要放保冷袋，接著還會去大觀峰與黑川短停，車上溫度要注意。"
       ]
@@ -606,7 +623,7 @@ export const TRAVEL_GUIDE_INFO = {
     },
     {
       title: "砂千里之濱與阿蘇火山口管制備案",
-      content: "砂千里之濱排在 Day 1 草千里 Green Park 午餐後短停；若當天火山口周邊不開放、濃霧或風勢過強，直接取消不硬上。Day 2 阿蘇山上區域只保留阿蘇中岳火山口；若火山口管制，改阿蘇火山博物館或提早下山午餐。"
+      content: "砂千里之濱排在 Day 1 草千里 Green Park 午餐後短停；若當天火山口周邊不開放、濃霧或風勢過強，直接取消不硬上。Day 2 阿蘇山上區域只保留阿蘇中岳火山口；若火山口管制，直接提早下山到 ASO MILK FACTORY 午餐與園區停留。若時間、體力、天氣與預約條件都符合，午後可選鍋ヶ滝；否則提早到黑川溫泉街或直接回 CAN LI ASSO。"
     },
     {
       title: "高千穗峽步道與長輩兒童防護",
