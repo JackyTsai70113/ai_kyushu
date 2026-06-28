@@ -25,6 +25,85 @@ import {
   Fuel
 } from "lucide-react";
 
+const getGoogleMapsQuery = (mapUrl?: string) => {
+  if (!mapUrl) return "";
+  try {
+    const url = new URL(mapUrl);
+    return url.searchParams.get("query") || mapUrl;
+  } catch {
+    return mapUrl;
+  }
+};
+
+const buildRoutePoints = (day: ItineraryDay) => {
+  const rawPoints = [
+    day.hotelUrl
+      ? {
+          label: day.hotel,
+          query: getGoogleMapsQuery(day.hotelUrl),
+        }
+      : null,
+    ...day.items
+      .filter((item) => item.mapUrl)
+      .map((item) => ({
+        label: item.place,
+        query: getGoogleMapsQuery(item.mapUrl),
+      })),
+  ].filter(Boolean) as Array<{ label: string; query: string }>;
+
+  const points: Array<{ label: string; query: string }> = [];
+  rawPoints.forEach((point) => {
+    const previous = points[points.length - 1];
+    if (!point.query || previous?.query === point.query) return;
+    points.push(point);
+  });
+
+  if (points.length > 1 && points[0].query === points[points.length - 1].query) {
+    return points;
+  }
+
+  if (day.hotelUrl && points.length > 1) {
+    const hotelQuery = getGoogleMapsQuery(day.hotelUrl);
+    if (points[points.length - 1].query !== hotelQuery) {
+      points.push({ label: day.hotel, query: hotelQuery });
+    }
+  }
+
+  return points;
+};
+
+const buildRouteUrls = (points: Array<{ label: string; query: string }>) => {
+  if (points.length < 2) return null;
+
+  const origin = points[0].query;
+  const destination = points[points.length - 1].query;
+  const embedDestination =
+    points.length > 2 && destination === origin
+      ? points[points.length - 2].query
+      : destination;
+  const waypoints = points.slice(1, -1).map((point) => point.query).join("|");
+  const fullRouteParams = new URLSearchParams({
+    api: "1",
+    travelmode: "driving",
+    origin,
+    destination,
+  });
+
+  if (waypoints) fullRouteParams.set("waypoints", waypoints);
+
+  const embedParams = new URLSearchParams({
+    output: "embed",
+    dirflg: "d",
+    saddr: origin,
+    daddr: embedDestination,
+  });
+
+  return {
+    fullRouteUrl: `https://www.google.com/maps/dir/?${fullRouteParams.toString()}`,
+    embedUrl: `https://www.google.com/maps?${embedParams.toString()}`,
+  };
+};
+
 export default function ItineraryView() {
   const [selectedDayNum, setSelectedDayNum] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,6 +111,8 @@ export default function ItineraryView() {
 
   // Filter day or locate spots
   const selectedDay = ITINERARY_DATA.find((d) => d.dayNum === selectedDayNum) || ITINERARY_DATA[0];
+  const dailyRoutePoints = buildRoutePoints(selectedDay);
+  const dailyRouteUrls = buildRouteUrls(dailyRoutePoints);
 
   const categoryIcons: Record<string, any> = {
     flight: Plane,
@@ -340,6 +421,64 @@ export default function ItineraryView() {
                   </div>
                 </div>
               </div>
+
+              {dailyRouteUrls && (
+                <div className="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
+                  <div className="p-5 border-b border-slate-100 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                        <Car className="w-4 h-4 text-indigo-600" />
+                        今日預計自駕路線圖
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-1">
+                        依照本日行程順序自動產生，實際導航請以 Google Maps 當下路況為準。
+                      </p>
+                    </div>
+                    <a
+                      href={dailyRouteUrls.fullRouteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-indigo-100 bg-indigo-50 px-3.5 py-2 text-xs font-bold text-indigo-700 transition-all hover:bg-indigo-100"
+                    >
+                      <MapPin className="w-3.5 h-3.5" />
+                      開啟完整 Google Maps 路線
+                    </a>
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px]">
+                    <div className="bg-slate-100 min-h-[280px]">
+                      <iframe
+                        title={`Day ${selectedDay.dayNum} 自駕路線圖`}
+                        src={dailyRouteUrls.embedUrl}
+                        className="h-[280px] w-full border-0 md:h-[360px]"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                    <div className="p-4 bg-slate-50/60 border-t lg:border-l lg:border-t-0 border-slate-100">
+                      <div className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-3">
+                        路線停靠順序
+                      </div>
+                      <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
+                        {dailyRoutePoints.map((point, index) => (
+                          <div key={`${point.query}-${index}`} className="flex gap-2 rounded-xl bg-white border border-slate-100 p-2.5">
+                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white">
+                              {index + 1}
+                            </span>
+                            <div className="min-w-0">
+                              <div className="text-xs font-bold text-slate-700 truncate">
+                                {point.label}
+                              </div>
+                              <div className="text-[10px] text-slate-400 truncate">
+                                {point.query}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* 今日彙整快覽 (Meals, Weather, Rain Backup, Gas Station) */}
               <div className="space-y-4">
