@@ -13,7 +13,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://owners-inn.com/?p=18895",
     hotelImageSourceName: "Owners-Inn 官方住宿頁",
     mainTheme: "熊本機場 ｜ 手作烘焙 ｜ 草千里 Green Park 午餐 ｜ 包棟自炊",
-    note: "住：南阿蘇 CAN LI ASSO。第一天從熊本機場下飛機開始，取車後先到 MERUKORO PAN-KOUBOU 買麵包，再上草千里 Green Park 吃中餐，最後高森補給與入住。砂千里之濱因 2026/7 火山警戒與緊急工事封閉，本趟不安排（詳見當天底部備註）。",
+    note: "住：南阿蘇 CAN LI ASSO。第一天從熊本機場下飛機開始，取車後先到 MERUKORO PAN-KOUBOU 買麵包，再上草千里 Green Park 吃中餐，最後高森補給與入住。砂千里之濱因 2026/7 火山警戒與緊急工事封閉，本趟不安排（詳見當天底部備註）。草帽雕像可選短停：娜美像（俵山交流館 萌の里），雨小且取車順利才拍。",
     advisory: "🌋 火山：2026/06/21 阿蘇噴火警戒升至 Lv.2（火口周辺規制）。砂千里ヶ浜因緊急工事 2026/06/15–07/31 立入禁止，本趟（7/4）無法進入，已從行程移除。草千里 Green Park 在管制圈外、照常開放，為本日午餐與展望主點。\n🌧️ 天候：7 月為梅雨末期、雨量大、山區易起霧；草千里濃霧或大雨時展望受限，改以室內午餐與休息為主。出發當天請再查 aso-volcano.jp（火山即時）與 tenki.jp／weathernews（兩週天氣）。",
     meals: {
       breakfast: "桃園機場簡單早餐或星宇航空機上早餐",
@@ -21,7 +21,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
       dinner: "高森／南阿蘇採買：Frein 超市、丸福蔬果攤、南阿蘇迷你超市，或山麓キッチン燒肉外食後回 CAN LI ASSO"
     },
     weatherForecast: "熊本平地高溫約 28°C~31°C 稍感悶熱；往阿蘇山區前行後，氣溫會平緩降至舒服的 21°C~25°C。午後多雲偶晴，山頂周遭略有短暫偶雨機率，建議帶防曬帽與防風薄外衣。【景觀提醒】7 月為九州梅雨末期、月雨量約 400mm、山區易起霧；草千里展望在濃霧或大雨時景色會大打折扣，可彈性縮短改室內午餐與休息。",
-    rainBackup: "草千里若大雨或濃霧，午餐仍可在草千里 Green Park / CAFE & SHOP GRASS LAND 室內解決。MERUKORO 只買重點麵包，改以 Frein 超市與南阿蘇迷你超市補給為主，提早回 CAN LI ASSO 休息。（砂千里之濱本趟封閉、已不安排。）",
+    rainBackup: "草千里若大雨或濃霧，午餐仍可在草千里 Green Park / CAFE & SHOP GRASS LAND 室內解決，戶外展望縮短成下車拍照 5-10 分鐘或取消。MERUKORO 若延誤只買重點麵包，改以 Frein 超市與南阿蘇迷你超市補給為主，提早回 CAN LI ASSO 休息。更多雨備：高森湧水隧道公園（室內步道、夏季涼）、道の駅 あそ望の郷くぎの（室內買物、廁所、餐飲）、高森駅周邊短停。草帽雕像雨備：娜美像只在雨勢小、停車方便時短拍；大雨不下車。砂千里之濱本趟封閉、已不安排。",
     gasStationTip: "熊本機場取車時 Toyota 租車已提供滿油狀態；第一天新增草千里上山路段，總車程變長但仍通常不需加油。若遇緊急狀況，阿蘇地區周邊即有【ENEOS 南阿蘇店】加油站。",
     items: [
       {
@@ -49,6 +49,15 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         plan: "取車後先往南阿蘇方向，到 MERUKORO PAN-KOUBOU 買麵包與車上點心，補隔天早餐也最順。",
         memo: "第一天剛右駕上路，先走相對好掌握的南阿蘇生活圈。若取車延誤超過 30 分鐘，MERUKORO 只買重點品項，避免草千里午餐太晚。",
         category: "car",
+      },
+      {
+        time: "13:00 - 13:15 可選",
+        place: "草帽雕像｜娜美像（俵山交流館 萌の里）",
+        move: "機場往南阿蘇路線可選短停",
+        plan: "草帽海賊團雕像地圖點。若取車順利、雨勢小、停車方便，可在俵山交流館 萌の里短停拍娜美像；若取車延誤或大雨，直接跳過。",
+        memo: "位置：俵山交流館 萌の里，熊本県阿蘇郡西原村小森2115-3。這站會讓午餐更晚，只作地圖標記與可選短停。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E4%BF%B5%E5%B1%B1%E4%BA%A4%E6%B5%81%E9%A4%A8%20%E8%90%8C%E3%81%AE%E9%87%8C%20%E3%83%8A%E3%83%9F%E5%83%8F",
+        category: "rest",
       },
       {
         time: "13:30 - 14:00",
@@ -116,7 +125,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://owners-inn.com/?p=18895",
     hotelImageSourceName: "Owners-Inn 官方住宿頁",
     mainTheme: "阿蘇中岳火山口 ｜ ASO MILK FACTORY 深度停留 ｜ 大觀峰 ｜ 瀬の本レストハウス ｜ 黑川短停",
-    note: "住：CAN LI ASSO。2026/7 火山警戒 Lv.2、火口道路封閉，阿蘇中岳火山口本趟無法上去；第二天直接以 ASO MILK FACTORY 為午餐與主活動，再接大觀峰、瀬の本、黑川（詳見當天底部備註）。",
+    note: "住：CAN LI ASSO。2026/7 火山警戒 Lv.2、火口道路封閉，阿蘇中岳火山口本趟無法上去；第二天直接以 ASO MILK FACTORY 為午餐與主活動，再接大觀峰、瀬の本、黑川（詳見當天底部備註）。草帽雕像可選短停：烏索普像（JR 阿蘇駅前），適合 ASO MILK FACTORY 前後小雨短拍。",
     advisory: "🌋 火山：阿蘇噴火警戒 Lv.2（自 2026/06/21）。中岳火口 1km 立入禁止、上山收費道路（阿蘇山公園道路）封閉、火口見學停止——本趟無法上火山口（火口內另有直升機事故，火口見學暫停）。第二天直接略過火山口，改以 ASO MILK FACTORY 為午餐與主活動，再接大觀峰 → 瀬の本 → 黑川。\n🌧️ 天候：梅雨末期山頂常濃霧，大觀峰展望可能整片白；濃霧或大雨時只停 10–15 分拍照、提早轉黑川或回別墅。ASO MILK FACTORY、瀬の本、黑川屬室內/街區，雨天影響較小。出發當天請再查 aso-volcano.jp 即時火口規制。",
     meals: {
       breakfast: "於別墅享用：前一日在 MERUKORO、Frein 超市或高森周邊採購的麵包、牛奶、水果與簡單早餐",
@@ -124,7 +133,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
       dinner: "下午視時間在道の駅 阿蘇或高森／南阿蘇周邊補買熟食、蔬果與點心，回 CAN LI ASSO 別墅享用"
     },
     weatherForecast: "阿蘇火山口與草千里屬中高海拔（標高約 1,140m），7 月山頂氣溫僅約 18°C~23°C，風勢甚猛、常現濃霧。紫外線偏高強，全體請備妥輕巧抗風防寒外套、太陽帽與遮陽傘。【景觀提醒】大觀峰是本日最受霧氣影響的展望點，梅雨期常整片白霧；濃霧時只停 10–15 分拍照即轉黑川或回別墅。ASO MILK FACTORY、瀬の本、黑川溫泉街屬室內/街區，雨天影響較小。",
-    rainBackup: "阿蘇中岳火山口極易受大雨、濃霧或火山管制影響封鎖。若火山口不開放，直接前往 ASO MILK FACTORY，把時間留給餐廳、咖啡、甜點工房、起司工房、商店與玫瑰園。午後若天氣與體力允許，大觀峰後先到瀬の本レストハウス休息、上洗手間、看九重連山與買阿蘇／大分由布院伴手禮；有預約且不繞路才加鍋ヶ滝，否則提早到黑川溫泉街散策。大雨時直接回 CAN LI ASSO。",
+    rainBackup: "阿蘇中岳火山口封閉已是本日預設，直接前往 ASO MILK FACTORY，把時間留給餐廳、咖啡、甜點工房、起司工房、商店與玫瑰園。大觀峰若濃霧大雨，只停 10-15 分鐘或取消，改瀬の本レストハウス室內休息、上洗手間、買伴手禮；黑川若雨大，改短停風の舎或甜點外帶，或直接回 CAN LI ASSO。更多雨備：道の駅 阿蘇、阿蘇駅前烏索普像小雨短拍、阿蘇火山博物館（若草千里可達且想補火山知識）、內牧溫泉區咖啡/足湯（天候許可）。鍋ヶ滝只在已預約且雨勢小時去，大雨濕滑取消。",
     gasStationTip: "山區路段加油站較少。建議在中午山下至阿蘇市區用餐完，可在市區 【ENEOS】加油站加滿常規 Regular 油（Mantan），以策安全。",
     items: [
       {
@@ -168,6 +177,15 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         move: "園區內步行",
         plan: "若火山口管制或大家想放慢，ASO MILK FACTORY 可多停留：看甜點工房、起司工房，逛商店買冷藏乳製品，天氣好再去玫瑰園散步拍照。",
         memo: "這段是管制時的主要緩衝，不影響後面大觀峰或黑川。冷藏品請放保冷袋，車上避免日曬。",
+        category: "rest",
+      },
+      {
+        time: "13:00 - 13:20 可選",
+        place: "草帽雕像｜烏索普像（JR 阿蘇駅前）",
+        move: "ASO MILK FACTORY 往阿蘇駅前約 10 分鐘",
+        plan: "草帽海賊團雕像地圖點。火山口封閉或 ASO MILK FACTORY 停留後仍有餘裕時，可到阿蘇駅前短停拍烏索普像。",
+        memo: "位置：JR 阿蘇駅前。小雨可短拍，大雨或大觀峰時間不足時跳過。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=JR%20%E9%98%BF%E8%98%87%E9%A7%85%E5%89%8D%20%E3%82%A6%E3%82%BD%E3%83%83%E3%83%97%E5%83%8F",
         category: "rest",
       },
       {
@@ -228,7 +246,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://www.vessel-hotel.jp/ref/kumamoto/stay/",
     hotelImageSourceName: "Vessel Hotels 官方客室頁",
     mainTheme: "高千穗小火車 ｜ 峽谷步道 ｜ 高森午餐 ｜ 白川水源 ｜ 熊本市區",
-    note: "住：REF Kumamoto by VESSEL HOTELS。高千穗小火車優先，峽谷只散步拍照；中午約 12:00 自高千穗啟程，順路到高森或南阿蘇午餐，餐後接白川水源再進熊本市區。",
+    note: "住：REF Kumamoto by VESSEL HOTELS。高千穗小火車優先，峽谷只散步拍照；中午約 12:00 自高千穗啟程，順路到高森或南阿蘇午餐，餐後接白川水源再進熊本市區。草帽雕像可選短停：佛朗基像（高森駅前）、羅賓像（舊東海大學阿蘇校區/KIOKU）。",
     meals: {
       breakfast: "在別墅內享用愜意晨食：簡單烘烤熱吐司、煎雞蛋與香濃咖啡/熱牛奶（準備行李退房）",
       lunch: "高森町 やま康赤牛丼；若想更清爽，改南阿蘇 久木野庵手工蕎麥麵，餐後接白川水源",
@@ -292,12 +310,30 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "food",
       },
       {
+        time: "13:55 - 14:10 可選",
+        place: "草帽雕像｜佛朗基像（高森駅前）",
+        move: "高森午餐後可選短停",
+        plan: "草帽海賊團雕像地圖點。若午餐在高森町、停車方便且沒有壓縮白川水源，可到高森駅前短拍佛朗基像。",
+        memo: "位置：高森駅前。若午餐改南阿蘇或高千穗延誤，直接跳過。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E6%A3%AE%E9%A7%85%E5%89%8D%20%E3%83%95%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%BC%E5%83%8F",
+        category: "rest",
+      },
+      {
         time: "13:55 - 14:25",
         place: "午餐點 → 白川水源",
         move: "自駕約 10-25 分鐘，依午餐店而定",
         plan: "午餐後接白川水源散步，下午再進熊本市區。",
         memo: "若在 やま康 用餐，餐後約 10-20 分鐘可到白川水源；若在久木野庵，用餐點與白川水源距離更近。",
         category: "car",
+      },
+      {
+        time: "14:10 - 14:30 可選",
+        place: "草帽雕像｜羅賓像（舊東海大學阿蘇校區 / KIOKU）",
+        move: "南阿蘇往白川水源或熊本市區途中可選短停",
+        plan: "草帽海賊團雕像地圖點。若時間有餘，可到舊東海大學阿蘇校區的熊本地震震災ミュージアム KIOKU 短停拍羅賓像。",
+        memo: "位置：熊本県阿蘇郡南阿蘇村河陽5343-1。此站帶有地震復興意義；若雨大或時間不足，保留地圖點不硬停。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%97%A7%E6%9D%B1%E6%B5%B7%E5%A4%A7%E5%AD%A6%E9%98%BF%E8%98%87%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%20%E3%83%AD%E3%83%93%E3%83%B3%E5%83%8F",
+        category: "rest",
       },
       {
         time: "14:25 - 15:05",
@@ -331,7 +367,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://www.vessel-hotel.jp/ref/kumamoto/stay/",
     hotelImageSourceName: "Vessel Hotels 官方客室頁",
     mainTheme: "優雅成趣園 ｜ 車站清涼瀑布 ｜ 黑蒜拉麵始祖",
-    note: "住：REF Kumamoto。7/7 早餐同時記得選回程班機 JX847 機位；這天放慢腳步，以市區與室內補給為主。",
+    note: "住：REF Kumamoto。7/7 早餐同時記得選回程班機 JX847 機位；這天放慢腳步，以市區與室內補給為主。草帽雕像可選短停：路飛像（熊本県庁）、喬巴像（熊本市動植物園）、山治像（益城町ミナテラス）、布魯克像（御船町ふれあい広場）。",
     meals: {
       breakfast: "REF 熊本新市街飯店豐富日式自助朝食（提供多達數十種熊本在地特色餐點與現烤麵包）；早餐同時選 7/9 回程星宇 JX847 機位，優先讓六大一小座位集中，訂位代號 EFGJC9",
       lunch: "三大拉麵名店：黑亭拉麵 熊本車站本店，焦香濃郁黑蒜油豚骨拉麵，中粗麵身、香氣十足",
@@ -358,6 +394,42 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         memo: "停車：水前寺正門外周邊幾家投幣付費停車格。早晨陽光和暖最合適。",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=%E6%B0%B4%E5%89%8D%E5%AF%BA%E6%88%90%E8%B6%A3%E5%9C%92",
         category: "nature",
+      },
+      {
+        time: "11:30 - 11:45 可選",
+        place: "草帽雕像｜路飛像（熊本県庁プロムナード）",
+        move: "水前寺成趣園周邊可選短停",
+        plan: "草帽海賊團雕像地圖點。路飛像在熊本県庁プロムナード，離水前寺相對近，適合市區移動時短拍。",
+        memo: "位置：熊本県庁プロムナード。若市區停車不便或中午時間壓縮，直接跳過。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E6%9C%AC%E7%9C%8C%E5%BA%81%20%E3%83%AB%E3%83%95%E3%82%A3%E5%83%8F",
+        category: "rest",
+      },
+      {
+        time: "11:45 - 12:05 可選",
+        place: "草帽雕像｜喬巴像（熊本市動植物園）",
+        move: "熊本市東區可選短停",
+        plan: "草帽海賊團雕像地圖點。若小孩想看動植物園周邊，且市區移動順利，可短停拍喬巴像。",
+        memo: "位置：熊本市動植物園，熊本市東区健軍5-14-2。若只逛市區與 AMU，這站保留地圖點即可。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E6%9C%AC%E5%B8%82%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92%20%E3%83%81%E3%83%A7%E3%83%83%E3%83%91%E3%83%BC%E5%83%8F",
+        category: "rest",
+      },
+      {
+        time: "12:05 - 12:25 可選",
+        place: "草帽雕像｜山治像（益城町ミナテラス）",
+        move: "熊本市東側往益城町可選短停",
+        plan: "草帽海賊團雕像地圖點。山治像在益城町交流情報センター ミナテラス，適合作為熊本市東側延伸短停。",
+        memo: "位置：熊本県上益城郡益城町木山236。此站會壓縮 AMU 午餐，僅在全家想收集雕像時加入。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E3%83%9F%E3%83%8A%E3%83%86%E3%83%A9%E3%82%B9%20%E7%9B%8A%E5%9F%8E%E7%94%BA%20%E3%82%B5%E3%83%B3%E3%82%B8%E5%83%8F",
+        category: "rest",
+      },
+      {
+        time: "12:25 - 12:45 可選",
+        place: "草帽雕像｜布魯克像（御船町ふれあい広場）",
+        move: "益城町往御船町可選短停",
+        plan: "草帽海賊團雕像地圖點。布魯克像在御船町ふれあい広場，適合與山治像同段收集；若長輩小孩想休息，直接取消。",
+        memo: "位置：熊本県上益城郡御船町辺田見100。這是東南側延伸，會讓 AMU 午餐變晚，只作可選。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%BE%A1%E8%88%B9%E7%94%BA%E3%81%B5%E3%82%8C%E3%81%82%E3%81%84%E5%BA%83%E5%A0%B4%20%E3%83%96%E3%83%AB%E3%83%83%E3%82%AF%E5%83%8F",
+        category: "rest",
       },
       {
         time: "11:20 - 14:30",
@@ -400,7 +472,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     hotelImageSourceUrl: "https://www.vessel-hotel.jp/ref/kumamoto/stay/",
     hotelImageSourceName: "Vessel Hotels 官方客室頁",
     mainTheme: "巍峨名城 ｜ 旬彩之寶 ｜ 勝烈亭極樂豬排",
-    note: "住：REF Kumamoto。最後完整一天集中熊本市區，少開車、多步行，便於長輩小孩體力調節。",
+    note: "住：REF Kumamoto。最後完整一天集中熊本市區，少開車、多步行，便於長輩小孩體力調節。草帽雕像可選短停：吉貝爾像（宇土市住吉海岸公園），需要放棄部分下午購物才建議去。",
     meals: {
       breakfast: "REF 熊本 VESSEL 飯店特供：主廚現搓招牌熊本芥末蓮藕球、佐賀明太子飯糰、西式蓬鬆炒蛋配新鮮美式咖啡",
       lunch: "櫻之馬場 城彩苑散策美食：爆汁海膽可樂餅、熱呼呼熊本熊大判燒、黑毛和牛串燒與極香高千穗牛奶霜淇淋",
@@ -438,6 +510,15 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "shop",
       },
       {
+        time: "14:00 - 16:30 可選替代半日",
+        place: "草帽雕像｜吉貝爾像（住吉海岸公園）",
+        move: "熊本市區往宇土市住吉海岸公園來回可選",
+        plan: "草帽海賊團雕像地圖點。若全家想補海邊雕像，可把下午上通下通購物縮短，改去住吉海岸公園拍吉貝爾像。",
+        memo: "位置：熊本県宇土市住吉町3162-1。此站離市區較遠，雨大、暑熱或購物需求高時不建議硬排。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E4%BD%8F%E5%90%89%E6%B5%B7%E5%B2%B8%E5%85%AC%E5%9C%92%20%E3%82%B8%E3%83%B3%E3%83%99%E3%82%A8%E5%83%8F",
+        category: "rest",
+      },
+      {
         time: "14:20 - 17:30",
         place: "上通與下通商店街無障礙雙拱廊 ＆ 一心堂老舖 / SWISS 外帶",
         move: "完全步行穿梭，悠然自得",
@@ -473,7 +554,7 @@ export const ITINERARY_DATA: ItineraryDay[] = [
     subTitle: "滿油快速還車、安檢歸航溫馨家門",
     hotel: "溫暖的家",
     mainTheme: "滿油加油 ｜ Toyota專車接駁 ｜ 圓滿返台",
-    note: "回程依航班資訊：11:55 熊本機場，13:20 星宇桃機一航廈。",
+    note: "回程依航班資訊：11:55 熊本機場，13:20 星宇桃機一航廈。草帽雕像可選短停：索隆像（大津中央公園），只在提早出發且還車時間充裕時拍。",
     meals: {
       breakfast: "REF 飯店早朝朝食或熊本機場便利超商 7-11 麵包、夾心熱狗、熱拿鐵與 ASO 米其林鮮奶",
       lunch: "星宇 JX847 機上由星級主廚團隊特製的「手作日式牛壽喜燒飯」或「胡麻鮮嫩雞排飯」配經典冷泡茶",
@@ -502,6 +583,15 @@ export const ITINERARY_DATA: ItineraryDay[] = [
         category: "car",
       },
       {
+        time: "08:55 - 09:10 可選",
+        place: "草帽雕像｜索隆像（大津中央公園）",
+        move: "熊本市區往機場途中可選短停",
+        plan: "草帽海賊團雕像地圖點。若提早退房、路況順、還車時間仍充裕，可到大津中央公園短停拍索隆像。",
+        memo: "位置：熊本県菊池郡大津町大津1156-3。返台日以加油、還車、登機為優先；任何延誤就取消。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B4%A5%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9C%92%20%E3%82%BE%E3%83%AD%E5%83%8F",
+        category: "rest",
+      },
+      {
         time: "09:35 - 10:15",
         place: "TOYOTA 租車還車還所 ＆ 免費大接駁航廈",
         move: "Toyota還車、專車接駁至航廈大門 (約 5 分鐘)",
@@ -525,6 +615,17 @@ export const ITINERARY_DATA: ItineraryDay[] = [
 
 export const TRAVEL_GUIDE_INFO = {
   shopping: [
+    {
+      title: "【ONE PIECE 熊本復興】草帽海賊團 10 座雕像地圖整理",
+      description: "10 座雕像已分散標到每日路線地圖，全部列為可選短停，不取代原本主行程。遇到大雨、延誤或長輩小孩疲累時，直接跳過即可。",
+      tips: [
+        "Day 1：娜美像，俵山交流館 萌の里（西原村小森2115-3）。",
+        "Day 2：烏索普像，JR 阿蘇駅前。",
+        "Day 3：佛朗基像，高森駅前；羅賓像，舊東海大學阿蘇校區 / KIOKU（南阿蘇村河陽5343-1）。",
+        "Day 4：路飛像，熊本県庁プロムナード；喬巴像，熊本市動植物園；山治像，益城町ミナテラス；布魯克像，御船町ふれあい広場。",
+        "Day 5：吉貝爾像，住吉海岸公園（宇土市住吉町3162-1）。Day 6：索隆像，大津中央公園。"
+      ]
+    },
     {
       title: "【熊本最強兩大拱廊商圈】上通 ＆ 下通商店街",
       description: "這條長約 1 公里上無雨巨型遮雨棚商店街，好買、好逛且不怕日曬雨淋。這裡有各大藥妝松本清、Daikoku大國、杉藥局，以及大型百貨、百元店、各種熊本熊文創周邊。截圖標註的 MUJI、NITORI、Seria、Can Do、DAISO、Standard Products、3COINS、Sports Alpen、Don Quijote 都歸在這段熊本逛街行程。",
