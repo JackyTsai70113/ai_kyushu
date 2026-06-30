@@ -22,13 +22,16 @@ import {
   Briefcase,
   MessageSquare,
   ClipboardList,
-  PhoneCall
+  PhoneCall,
+  Menu,
+  X
 } from "lucide-react";
 
 export default function App() {
   const [activeSegment, setActiveSegment] = useState<"itinerary" | "guide" | "phrases" | "planner" | "ai" | "overview">("itinerary");
   const [currentUtcTime, setCurrentUtcTime] = useState("");
   const [phraseSearchQuery, setPhraseSearchQuery] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const openDiningPhrase = (query: string) => {
     setPhraseSearchQuery(query);
@@ -56,14 +59,24 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased flex flex-col md:flex-row">
       
-      {/* LEFT SIDEBAR: Navigation & Overview (Desktop Only, md and up) */}
-      <aside className="hidden md:flex w-80 bg-slate-900 text-white flex-col p-6 h-screen sticky top-0 shrink-0 border-r border-slate-800 justify-between">
+      {/* LEFT SIDEBAR: Navigation & Overview (Desktop Only, md and up; collapsible via hamburger) */}
+      <aside className={`${sidebarOpen ? "md:flex" : "md:hidden"} hidden w-80 bg-slate-900 text-white flex-col p-6 h-screen sticky top-0 shrink-0 border-r border-slate-800 justify-between`}>
         <div className="space-y-6">
           {/* Brand block */}
           <div>
-            <div className="flex items-center gap-2 text-indigo-400 uppercase tracking-widest text-xs font-bold mb-1">
-              <Compass className="h-4 w-4 animate-spin-slow" />
-              Trip Planner • 2026
+            <div className="flex items-center justify-between gap-2 mb-1">
+              <div className="flex items-center gap-2 text-indigo-400 uppercase tracking-widest text-xs font-bold">
+                <Compass className="h-4 w-4 animate-spin-slow" />
+                Trip Planner • 2026
+              </div>
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="text-slate-400 hover:text-white rounded-lg p-1 hover:bg-slate-800 transition-colors"
+                title="收合選單"
+                aria-label="收合選單"
+              >
+                <X className="h-4 w-4" />
+              </button>
             </div>
             <h1 className="text-xl font-black tracking-tight text-white leading-tight">
               九州家庭自駕行
@@ -175,6 +188,19 @@ export default function App() {
         {/* Top Header Bar for Desktop Screen (md and up) */}
         <header className="hidden md:flex h-16 items-center justify-between border-b border-slate-200 bg-white px-8 shadow-xs relative z-30">
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => setSidebarOpen((v) => !v)}
+              className="rounded-lg p-2 text-slate-600 hover:bg-slate-100 hover:text-indigo-600 transition-colors"
+              title={sidebarOpen ? "收合選單" : "展開選單"}
+              aria-label="切換側邊選單"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            {!sidebarOpen && (
+              <span className="text-sm font-black tracking-tight text-slate-900">
+                九州家庭自駕行
+              </span>
+            )}
             <span className="text-sm font-semibold text-slate-800 underline underline-offset-8 decoration-2 decoration-indigo-500">
               {segments.find((seg) => seg.id === activeSegment)?.label || "九州幸福手冊"}
             </span>

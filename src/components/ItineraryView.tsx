@@ -22,7 +22,8 @@ import {
   Compass,
   CloudSun,
   Umbrella,
-  Fuel
+  Fuel,
+  X
 } from "lucide-react";
 
 const getGoogleMapsQuery = (mapUrl?: string) => {
@@ -189,17 +190,17 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 lg:items-start gap-8 min-w-0">
-      {/* Sidebar: Day Buttons & Search (sticky on desktop so it follows the long timeline instead of leaving a blank column) */}
-      <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto lg:pr-1">
-        <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></span>
-            六天行程導覽
-          </h3>
-          <div className="space-y-2">
+    <div className="space-y-6 min-w-0">
+      {/* Sticky day-selector bar pinned to the top of the itinerary (full width) */}
+      <div className="sticky top-0 z-20 -mx-4 border-b border-slate-200 bg-slate-50/90 px-4 py-3 backdrop-blur md:-mx-8 md:px-8">
+        <div className="flex flex-col gap-2.5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex items-center gap-2 overflow-x-auto pb-0.5">
+            <span className="hidden shrink-0 items-center gap-1.5 pr-1 text-[11px] font-bold uppercase tracking-wider text-slate-400 sm:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-600" />
+              六天導覽
+            </span>
             {ITINERARY_DATA.map((day) => {
-              const isSelected = day.dayNum === selectedDayNum;
+              const isSelected = day.dayNum === selectedDayNum && searchQuery.trim().length < 2;
               return (
                 <button
                   id={`day-nav-btn-${day.dayNum}`}
@@ -208,70 +209,48 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                     setSelectedDayNum(day.dayNum);
                     setSearchQuery(""); // Clear search on tab switch
                   }}
-                  className={`w-full min-w-0 overflow-hidden text-left p-3.5 rounded-xl transition-all duration-200 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 border ${
+                  title={`${day.date} (${day.weekday})｜${day.mainTheme}`}
+                  className={`shrink-0 rounded-xl border px-3 py-2 text-xs font-bold transition-all ${
                     isSelected
-                      ? "bg-indigo-600 text-white border-indigo-600 shadow-sm shadow-indigo-600/10"
-                      : "bg-slate-50 text-slate-700 border-slate-100 hover:bg-slate-100"
+                      ? "border-indigo-600 bg-indigo-600 text-white shadow-sm"
+                      : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
                   }`}
                 >
-                  <span className={`mt-1 shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-md ${
-                    isSelected ? "bg-indigo-700 text-indigo-100" : "bg-slate-200 text-slate-600"
-                  }`}>
-                    D{day.dayNum}
-                  </span>
-                  <div className="min-w-0 text-sm space-y-1">
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                      <span className="font-semibold leading-tight break-keep">{day.date} ({day.weekday})</span>
-                      <span className={`shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-mono font-bold leading-none ${
-                        isSelected ? "bg-indigo-700/60 text-indigo-100" : "bg-slate-200/70 text-slate-500"
-                      }`}>
-                        {day.items.length} 站
-                      </span>
-                    </div>
-                    <div className={`text-xs truncate ${
-                      isSelected ? "text-indigo-200" : "text-slate-400"
-                    }`}>
-                      {day.mainTheme}
-                    </div>
-                  </div>
+                  <span className="font-mono">D{day.dayNum}</span>
+                  <span className="ml-1.5 font-semibold">{day.date.slice(5)}</span>
+                  <span className={`ml-1 ${isSelected ? "text-indigo-200" : "text-slate-400"}`}>({day.weekday})</span>
                 </button>
               );
             })}
           </div>
-        </div>
-
-        {/* Global Search box */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-              全行程景點搜索
-            </h3>
-            {searchQuery && (
-              <button onClick={() => setSearchQuery("")} className="text-[11px] text-indigo-600 hover:underline">
-                重置
-              </button>
-            )}
-          </div>
-          <div className="relative">
-            <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+          <div className="relative w-full shrink-0 lg:w-72">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               id="itinerary-search-input"
               type="text"
-              placeholder="搜尋景點、餐館、備忘..."
+              placeholder="搜尋全行程景點、餐館、備忘..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full text-xs pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-600 transition-all text-slate-700"
+              className="w-full rounded-xl border border-slate-200 bg-white py-2 pl-9 pr-8 text-xs text-slate-700 outline-none transition-all focus:border-indigo-600"
             />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-slate-400 transition-colors hover:text-indigo-600"
+                aria-label="清除搜尋"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
           </div>
-          {searchQuery.trim().length > 0 && searchQuery.trim().length < 2 && (
-            <p className="text-[10px] text-slate-400">請輸入至少 2 個字進行即時搜尋...</p>
-          )}
         </div>
+        {searchQuery.trim().length > 0 && searchQuery.trim().length < 2 && (
+          <p className="mt-1.5 text-[10px] text-slate-400">請輸入至少 2 個字進行即時搜尋...</p>
+        )}
       </div>
 
-      {/* Main Content Area: Itinerary Schedule Details */}
-      <div className="lg:col-span-3 space-y-6 min-w-0">
+      {/* Main Content Area: Itinerary Schedule Details (full width) */}
+      <div className="space-y-6 min-w-0">
         <AnimatePresence mode="wait">
           {searchQuery.trim().length >= 2 ? (
             // Search Results View
