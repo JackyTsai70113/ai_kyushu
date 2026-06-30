@@ -91,7 +91,7 @@ export default function App() {
               <span className="text-[11px] font-bold text-slate-400 tracking-wider">最新修正進度</span>
             </div>
             <p className="text-slate-300 text-xs leading-relaxed font-light">
-              Day 1 從熊本機場下飛機開始並加入砂千里之濱；Day 2 阿蘇山上區域只保留火山口。
+              ⚠️ 2026/7 阿蘇火山警戒 Lv.2：砂千里ヶ浜（6/15–7/31）與中岳火口道路封閉，砂千里已移除、火山口不上山，Day 2 改以 ASO MILK FACTORY 為主。詳見各日行程底部備註。
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function App() {
                   2026 幸福自駕核心修正提醒
                 </h3>
                 <p className="text-xs sm:text-sm text-indigo-950 leading-relaxed font-light">
-                  本版手冊已改為 <strong>Day 1 熊本機場起點、MERUKORO、草千里 Green Park 午餐、砂千里之濱；Day 2 阿蘇火山口、ASO MILK FACTORY 午餐；Day 3 CAN LI ASSO 起點、高千穗、白川水源</strong>。7/7 10:00 記得選回程 JX847 機位。
+                  本版手冊已改為 <strong>Day 1 熊本機場起點、MERUKORO、草千里 Green Park 午餐；Day 2 ASO MILK FACTORY 午餐、大觀峰、黑川；Day 3 CAN LI ASSO 起點、高千穗、白川水源</strong>。<strong className="text-rose-700">⚠️ 2026/7 阿蘇火山 Lv.2：砂千里ヶ浜 6/15–7/31 封閉（已移除）、中岳火口道路封閉不上山。</strong>7/7 10:00 記得選回程 JX847 機位。
                 </p>
               </div>
             </div>

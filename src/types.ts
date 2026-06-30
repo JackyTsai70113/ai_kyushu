@@ -31,6 +31,7 @@ export interface ItineraryDay {
   weatherForecast?: string;
   rainBackup?: string;
   gasStationTip?: string;
+  advisory?: string;
 }
 
 export interface ChecklistItem {

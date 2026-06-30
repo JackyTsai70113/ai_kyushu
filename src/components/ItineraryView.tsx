@@ -668,6 +668,19 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                   );
                 })}
               </div>
+
+              {/* Day-level advisory note appended at the very bottom of the day's itinerary */}
+              {selectedDay.advisory && (
+                <div className="rounded-2xl border border-rose-200 bg-rose-50 p-5 shadow-xs">
+                  <h3 className="mb-2 flex items-center gap-2 border-b border-rose-100 pb-2 text-sm font-bold text-rose-800">
+                    <AlertTriangle className="h-4 w-4 text-rose-600" />
+                    ⚠️ 當天重要備註（火山警戒與天候景觀）
+                  </h3>
+                  <p className="whitespace-pre-line text-xs leading-relaxed text-rose-900 md:text-sm">
+                    {selectedDay.advisory}
+                  </p>
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
