@@ -18,10 +18,6 @@ The GitHub Pages build runs automatically on pushes to `main` through `.github/w
 
 Because GitHub Pages has no server runtime, the AI chat API (`/api/gemini/chat`) is disabled on the static site and shows a clear "not connected" message. The itinerary, handbook, Japanese phrases, packing, and expense tools still work as frontend features.
 
-## Japanese Learning Materials
-
-旅行日文學習資料整理在 [`docs/japanese/`](docs/japanese/)。
-
 ## Run Locally
 
 **Prerequisites:**  Node.js
