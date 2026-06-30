@@ -170,7 +170,7 @@ export default function App() {
       </div>
 
       {/* MAIN CONTENT WORKSPACE */}
-      <main className="flex-1 flex flex-col min-h-screen overflow-x-hidden">
+      <main className="flex-1 flex flex-col min-h-screen overflow-x-clip">
         
         {/* Top Header Bar for Desktop Screen (md and up) */}
         <header className="hidden md:flex h-16 items-center justify-between border-b border-slate-200 bg-white px-8 shadow-xs relative z-30">

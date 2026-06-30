@@ -378,7 +378,7 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
           <input
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}
-            placeholder="全文搜尋：中文或日文（赤牛丼／あか牛、加油／満タン、退房）..."
+            placeholder="搜尋中文或日文（赤牛丼／あか牛）"
             className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-3 text-xs text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100"
           />
         </label>

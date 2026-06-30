@@ -189,9 +189,9 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 min-w-0">
-      {/* Sidebar: Day Buttons & Search */}
-      <div className="lg:col-span-1 space-y-6">
+    <div className="grid grid-cols-1 lg:grid-cols-4 lg:items-start gap-8 min-w-0">
+      {/* Sidebar: Day Buttons & Search (sticky on desktop so it follows the long timeline instead of leaving a blank column) */}
+      <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto lg:pr-1">
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></span>
@@ -231,7 +231,7 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                     <div className={`text-xs truncate ${
                       isSelected ? "text-indigo-200" : "text-slate-400"
                     }`}>
-                      {day.items[day.items.length - 1].place.split("→")[0].split("店")[0]}...
+                      {day.mainTheme}
                     </div>
                   </div>
                 </button>
