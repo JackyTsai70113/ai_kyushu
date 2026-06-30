@@ -77,7 +77,7 @@ export default function App() {
               <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
               <span className="text-[11px] font-bold text-slate-400 tracking-wider">最新修正進度</span>
             </div>
-            <p className="text-slate-350 text-xs leading-relaxed font-light">
+            <p className="text-slate-300 text-xs leading-relaxed font-light">
               Day 1 從熊本機場下飛機開始並加入砂千里之濱；Day 2 阿蘇山上區域只保留火山口。
             </p>
           </div>
@@ -118,14 +118,14 @@ export default function App() {
             <PhoneCall className="w-3.5 h-3.5 text-indigo-400" />
             緊急聯絡 / 訂位
           </div>
-          <div className="text-xs space-y-1 text-slate-350">
+          <div className="text-xs space-y-1 text-slate-300">
             <div className="flex justify-between">
               <span>✈️ 星宇航空</span>
               <span className="font-mono font-bold text-indigo-300">EFGJC9</span>
             </div>
             <div className="flex justify-between">
               <span>🚗 自駕</span>
-              <span className="font-mono text-slate-40s font-medium text-xs">TOYOTA W3</span>
+              <span className="font-mono text-slate-400 font-medium text-xs">TOYOTA W3</span>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function App() {
             <span className="text-[9px] bg-indigo-500 text-white font-mono uppercase tracking-widest font-bold px-2 py-0.5 rounded-full mr-2">
               2026 第二版
             </span>
-            <h1 className="text-md font-extrabold tracking-tight text-white inline-block">
+            <h1 className="text-base font-extrabold tracking-tight text-white inline-block">
               九州家庭自駕行
             </h1>
           </div>
@@ -159,7 +159,7 @@ export default function App() {
                 className={`py-2 px-3.5 rounded-xl text-xs font-bold transition-all ${
                   isActive
                     ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-slate-800 text-slate-350 hover:bg-slate-755"
+                    : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
                 {seg.label.split(" ")[1]}
@@ -175,18 +175,18 @@ export default function App() {
         {/* Top Header Bar for Desktop Screen (md and up) */}
         <header className="hidden md:flex h-16 items-center justify-between border-b border-slate-200 bg-white px-8 shadow-xs relative z-30">
           <div className="flex items-center gap-4">
-            <span className="text-sm font-semibold text-slate-850 underline underline-offset-8 decoration-2 decoration-indigo-500">
+            <span className="text-sm font-semibold text-slate-800 underline underline-offset-8 decoration-2 decoration-indigo-500">
               {segments.find((seg) => seg.id === activeSegment)?.label || "九州幸福手冊"}
             </span>
             <span className="text-xs text-slate-300">|</span>
             <span className="text-xs font-mono text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-indigo-600" />
-              台北時間: <span className="font-extrabold text-indigo-750">{currentUtcTime || "加載中..."}</span>
+              台北時間: <span className="font-extrabold text-indigo-700">{currentUtcTime || "加載中..."}</span>
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-slate-650 bg-slate-100 border border-slate-200/50 rounded-xl px-3.5 py-1.5 flex items-center gap-1">
+            <span className="text-xs font-bold text-slate-600 bg-slate-100 border border-slate-200/50 rounded-xl px-3.5 py-1.5 flex items-center gap-1">
               👨‍👩‍👧‍👦 家族旅行成員: 六大一小 🙋
             </span>
             <a 
@@ -270,7 +270,7 @@ export default function App() {
             <p className="max-w-2xl mx-auto text-slate-500 leading-relaxed font-light text-[11px] sm:text-xs">
               本手冊專為本次六大一小自駕行程定制，每日景點、餐廳、住宿與自駕路線皆依最新時序安排。天候變換請即時與口袋導遊進行互動查詢。
             </p>
-            <div className="text-[10px] text-slate-650 font-mono">
+            <div className="text-[10px] text-slate-600 font-mono">
               © 2026 九州自駕樂活旅遊手冊 ｜ Styled with Professional Polish Theme Theme
             </div>
           </div>

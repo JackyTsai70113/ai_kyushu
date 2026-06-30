@@ -75,7 +75,7 @@ export default function TravelHandbook() {
       </div>
 
       {/* Guide Content Render */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xxl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
         {activeTab === "shopping" && (
           <>
             {TRAVEL_GUIDE_INFO.shopping.map((item, idx) => (
@@ -103,7 +103,7 @@ export default function TravelHandbook() {
                     <span className="text-[11px] font-bold tracking-wider text-slate-400 uppercase block">導遊秘密攻略 ──</span>
                     {item.tips.map((tip, tipIdx) => (
                       <div key={tipIdx} className="flex gap-2 items-start text-xs text-slate-600">
-                        <CheckCircle className="w-4 h-4 text-indigo-650 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-indigo-600 flex-shrink-0 mt-0.5" />
                         <p>{tip}</p>
                       </div>
                     ))}

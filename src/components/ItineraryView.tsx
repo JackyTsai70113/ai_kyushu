@@ -229,7 +229,7 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                       </span>
                     </div>
                     <div className={`text-xs truncate ${
-                      isSelected ? "text-indigo-250" : "text-slate-400"
+                      isSelected ? "text-indigo-200" : "text-slate-400"
                     }`}>
                       {day.items[day.items.length - 1].place.split("→")[0].split("店")[0]}...
                     </div>
@@ -355,7 +355,7 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                               setSelectedDayNum(dayNum);
                               setSearchQuery("");
                             }}
-                            className="text-xs text-indigo-805 bg-indigo-50 hover:bg-indigo-100 transition-all px-3 py-1.5 rounded-lg font-medium w-full text-center"
+                            className="text-xs text-indigo-800 bg-indigo-50 hover:bg-indigo-100 transition-all px-3 py-1.5 rounded-lg font-medium w-full text-center"
                           >
                             造訪此天 D{dayNum}
                           </button>
@@ -383,7 +383,7 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                 </div>
                 <div className="relative z-10 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-bold tracking-widest uppercase bg-slate-800 text-indigo-300 px-3 py-1 rounded-full border border-slate-750 flex items-center gap-1">
+                    <span className="text-xs font-bold tracking-widest uppercase bg-slate-800 text-indigo-300 px-3 py-1 rounded-full border border-slate-700 flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       Day 0{selectedDay.dayNum}
                     </span>
@@ -607,7 +607,7 @@ export default function ItineraryView({ onOpenDiningPhrase }: ItineraryViewProps
                       </span>
 
                       {/* Schedule item card */}
-                      <div className="min-w-0 bg-white p-5 rounded-2xl border border-slate-100 hover:border-indigo-205 hover:shadow-xs transition-all duration-200">
+                      <div className="min-w-0 bg-white p-5 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-xs transition-all duration-200">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3 pb-3 border-b border-dashed border-slate-100">
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="text-xs font-bold text-slate-800 font-mono flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-md">

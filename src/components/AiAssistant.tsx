@@ -151,7 +151,7 @@ export default function AiAssistant() {
 
         <button 
           onClick={clearChatHistory}
-          className="text-slate-450 hover:text-rose-400 text-xs flex items-center gap-1 h-8 px-2.5 rounded-lg border border-slate-800 hover:border-rose-950/40 transition-colors"
+          className="text-slate-400 hover:text-rose-400 text-xs flex items-center gap-1 h-8 px-2.5 rounded-lg border border-slate-800 hover:border-rose-950/40 transition-colors"
           title="清除對話歷史"
         >
           <RefreshCw className="w-3 h-3" />
@@ -167,7 +167,7 @@ export default function AiAssistant() {
             className={`max-w-[85%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
               m.role === "user"
                 ? "bg-indigo-600 text-white self-end rounded-tr-none shadow-sm"
-                : "bg-slate-820 text-slate-100 self-start rounded-tl-none border border-slate-800"
+                : "bg-slate-800 text-slate-100 self-start rounded-tl-none border border-slate-800"
             }`}
           >
             <div className="font-bold text-[10px] uppercase tracking-wider opacity-60 mb-1 flex justify-between items-center gap-4 border-b border-white/5 pb-1">
@@ -181,7 +181,7 @@ export default function AiAssistant() {
         ))}
 
         {isLoading && (
-          <div className="bg-slate-820 border border-slate-800 text-slate-100 rounded-2xl rounded-tl-none p-4 text-xs sm:text-sm self-start max-w-[80%] flex items-center gap-3">
+          <div className="bg-slate-800 border border-slate-800 text-slate-100 rounded-2xl rounded-tl-none p-4 text-xs sm:text-sm self-start max-w-[80%] flex items-center gap-3">
             <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></span>
             <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce delay-100"></span>
             <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce delay-200"></span>
@@ -202,7 +202,7 @@ export default function AiAssistant() {
             key={idx}
             onClick={() => handleSendMessage(s)}
             disabled={isStaticPage}
-            className="inline-block text-slate-350 hover:text-indigo-300 hover:border-indigo-900/50 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-[11px] py-1.5 px-3 rounded-lg transition-all cursor-pointer select-none"
+            className="inline-block text-slate-300 hover:text-indigo-300 hover:border-indigo-900/50 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-[11px] py-1.5 px-3 rounded-lg transition-all cursor-pointer select-none"
           >
             {s.substring(0, 22)}...
           </button>
@@ -224,7 +224,7 @@ export default function AiAssistant() {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder={isStaticPage ? "靜態網頁版未串接，無法使用 AI 對話" : "向口袋導遊諮詢：如「幼童安全座椅高度要求、高千穗去熊本開多久」..."}
           disabled={isLoading || isStaticPage}
-          className="flex-1 text-xs px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 disabled:opacity-55"
+          className="flex-1 text-xs px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-100 disabled:opacity-55"
         />
         <button
           id="chat-send-message-btn"

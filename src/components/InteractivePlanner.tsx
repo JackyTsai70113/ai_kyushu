@@ -246,13 +246,13 @@ export default function InteractivePlanner() {
                 placeholder="新增個人攜帶物品... (如: 小孩泳裝、阿嬤高血壓藥)"
                 value={newCheckItem}
                 onChange={(e) => setNewCheckItem(e.target.value)}
-                className="sm:col-span-6 text-xs px-3 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-650 bg-slate-50"
+                className="sm:col-span-6 text-xs px-3 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-600 bg-slate-50"
               />
               <select
                 id="add-checklist-category"
                 value={checkCategory}
                 onChange={(e) => setCheckCategory(e.target.value as ChecklistItem["category"])}
-                className="sm:col-span-4 text-xs px-3 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-650 bg-slate-50"
+                className="sm:col-span-4 text-xs px-3 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-600 bg-slate-50"
               >
                 <option value="essential">🪪 證件錢包重要物</option>
                 <option value="electronics">🔌 電子通訊設備</option>
@@ -263,7 +263,7 @@ export default function InteractivePlanner() {
               <button
                 id="add-checklist-btn"
                 type="submit"
-                className="sm:col-span-2 text-xs bg-indigo-650 hover:bg-indigo-750 text-white font-bold rounded-xl py-2.5 px-4 flex items-center justify-center gap-1 transition-all"
+                className="sm:col-span-2 text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl py-2.5 px-4 flex items-center justify-center gap-1 transition-all"
               >
                 <Plus className="w-4 h-4" />
                 新增
@@ -302,7 +302,7 @@ export default function InteractivePlanner() {
                         >
                           <div className="flex items-center gap-3 mr-3 select-none">
                             {item.checked ? (
-                              <CheckSquare className="w-4 h-4 text-indigo-650 flex-shrink-0" />
+                              <CheckSquare className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                             ) : (
                               <Square className="w-4 h-4 text-slate-300 flex-shrink-0" />
                             )}
@@ -392,7 +392,7 @@ export default function InteractivePlanner() {
                 <button
                   id="add-budget-btn"
                   type="submit"
-                  className="w-full text-xs bg-indigo-650 hover:bg-indigo-750 text-white font-bold rounded-xl py-2.5 px-4 flex items-center justify-center gap-1 transition-all shadow-xs"
+                  className="w-full text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl py-2.5 px-4 flex items-center justify-center gap-1 transition-all shadow-xs"
                 >
                   <Plus className="w-4 h-4" />
                   新增
@@ -465,7 +465,7 @@ export default function InteractivePlanner() {
                 </h4>
                 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-450 block">標題</label>
+                  <label className="text-[10px] font-bold text-slate-400 block">標題</label>
                   <input
                     id="add-note-title"
                     type="text"
@@ -478,7 +478,7 @@ export default function InteractivePlanner() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-450 block">詳細記事內容</label>
+                  <label className="text-[10px] font-bold text-slate-400 block">詳細記事內容</label>
                   <textarea
                     id="add-note-content"
                     rows={6}
@@ -493,7 +493,7 @@ export default function InteractivePlanner() {
                   <button
                     id="save-note-btn"
                     type="submit"
-                    className="flex-1 text-xs bg-indigo-650 hover:bg-indigo-750 text-white font-bold rounded-xl py-2.5 transition-all text-center"
+                    className="flex-1 text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl py-2.5 transition-all text-center"
                   >
                     儲存記事
                   </button>

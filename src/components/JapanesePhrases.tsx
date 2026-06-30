@@ -23,6 +23,7 @@ import guide07 from "../../docs/japanese/kumamoto-trip-japanese/07_測驗與角�
 import guide08 from "../../docs/japanese/kumamoto-trip-japanese/08_每日口說打卡表.md?raw";
 import guide09 from "../../docs/japanese/kumamoto-trip-japanese/09_手機急救小抄.md?raw";
 import guide10 from "../../docs/japanese/kumamoto-trip-japanese/10_不熟單字本.md?raw";
+import guide11 from "../../docs/japanese/kumamoto-trip-japanese/11_餐廳食材餐點與方便素幼兒.md?raw";
 import ankiCore from "../../docs/japanese/kumamoto-trip-japanese/anki_kumamoto_core.tsv?raw";
 
 type StudyDoc = {
@@ -64,6 +65,7 @@ const STUDY_DOCS: StudyDoc[] = [
   { id: "survival", title: "熊本旅行生存句", shortTitle: "生存句", raw: guide01, group: "field" },
   { id: "transit", title: "交通與問路", shortTitle: "交通問路", raw: guide02, group: "field" },
   { id: "dining", title: "餐廳咖啡與熊本美食", shortTitle: "餐廳咖啡", raw: guide03, group: "field" },
+  { id: "meals", title: "餐廳食材餐點與方便素・幼兒對照", shortTitle: "餐廳食材", raw: guide11, group: "field" },
   { id: "hotel", title: "旅館溫泉與寄放行李", shortTitle: "旅館溫泉", raw: guide04, group: "field" },
   { id: "shopping", title: "景點拍照購物與伴手禮", shortTitle: "景點購物", raw: guide05, group: "field" },
   { id: "emergency", title: "突發狀況與求助", shortTitle: "突發求助", raw: guide06, group: "field" },
@@ -243,6 +245,27 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
     return `${phrase.zh} ${phrase.ja} ${phrase.hint}`.toLowerCase().includes(search);
   });
 
+  // Global search: when a query is typed, surface matches across EVERY document and
+  // the core phrases at once, so any 中文 or 日文 word can be looked up and used on the
+  // spot — no need to first guess which tab the phrase lives in.
+  const globalDocMatches = useMemo(() => {
+    if (!search) return [] as Array<{ doc: ParsedDoc; section: ParsedSection; block: ParsedBlock }>;
+    const matches: Array<{ doc: ParsedDoc; section: ParsedSection; block: ParsedBlock }> = [];
+    parsedDocs.forEach((doc) => {
+      doc.sections.forEach((section) => {
+        section.blocks.forEach((block) => {
+          if (`${doc.title} ${section.title} ${block.searchText}`.toLowerCase().includes(search)) {
+            matches.push({ doc, section, block });
+          }
+        });
+      });
+    });
+    return matches;
+  }, [search, parsedDocs]);
+
+  const globalCoreMatches = search ? filteredCorePhrases : [];
+  const globalMatchCount = globalDocMatches.length + globalCoreMatches.length;
+
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopiedText(text);
@@ -306,7 +329,7 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
             <div className="space-y-1">
               <h4 className="text-sm font-bold text-slate-900">隨行自駕日語聽診</h4>
               <p className="max-w-3xl text-xs leading-relaxed text-slate-600">
-                已整合 docs/japanese/kumamoto-trip-japanese 的完整學習包，包含核心句、交通問路、餐廳咖啡、旅館溫泉、景點購物、突發求助、角色扮演、每日打卡、手機急救小抄與不熟單字本。
+                已整合 docs/japanese/kumamoto-trip-japanese 的完整學習包，包含核心句、交通問路、租車還車、餐廳咖啡、餐廳食材與方便素／幼兒對照、旅館溫泉、景點購物、突發求助、角色扮演、每日打卡、手機急救小抄與不熟單字本。上方搜尋框可用中文或日文全文搜尋所有文件，當下立即查用。
               </p>
             </div>
           </div>
@@ -341,7 +364,7 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
               }}
               className={`rounded-xl px-3.5 py-2 text-xs font-bold transition-all ${
                 activeGroup === value
-                  ? "border border-indigo-650 bg-indigo-600 text-white shadow-xs"
+                  ? "border border-indigo-600 bg-indigo-600 text-white shadow-xs"
                   : "border border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
               }`}
             >
@@ -355,13 +378,13 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
           <input
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}
-            placeholder="搜尋中文、日文、讀音、情境..."
+            placeholder="全文搜尋：中文或日文（赤牛丼／あか牛、加油／満タン、退房）..."
             className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-3 text-xs text-slate-700 outline-none transition-all placeholder:text-slate-400 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100"
           />
         </label>
       </div>
 
-      {activeGroup !== "core" && (
+      {!search && activeGroup !== "core" && (
         <div className="flex gap-2 overflow-x-auto pb-1">
           {visibleDocs.map((doc) => (
             <button
@@ -382,7 +405,81 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
         </div>
       )}
 
-      {activeGroup === "core" ? (
+      {search ? (
+        <div className="space-y-5">
+          <div className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white p-5 shadow-xs">
+            <div>
+              <div className="text-[11px] font-bold uppercase tracking-wider text-indigo-600">全文搜尋（所有文件＋核心句）</div>
+              <h3 className="text-lg font-black text-slate-900">「{searchQuery.trim()}」</h3>
+            </div>
+            <div className="rounded-lg bg-slate-50 px-3 py-2 text-xs font-bold text-slate-500">{globalMatchCount} 句</div>
+          </div>
+
+          {globalMatchCount === 0 && (
+            <div className="rounded-2xl border border-slate-100 bg-white p-10 text-center text-sm text-slate-400">
+              找不到「{searchQuery.trim()}」。可改用中文（赤牛丼、加油、退房、火山口）或日文（あか牛、満タン、チェックアウト）關鍵字。
+            </div>
+          )}
+
+          {globalCoreMatches.length > 0 && (
+            <div className="space-y-3">
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-400">核心句</div>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+                {globalCoreMatches.map((phrase, index) => {
+                  const copyText = `${phrase.zh}\n${phrase.ja}\n${phrase.hint}`;
+                  const id = `search-core-${index}`;
+                  return (
+                    <div key={id} className="rounded-2xl border border-slate-100 bg-white p-4 shadow-xs">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 space-y-2">
+                          <div className="text-xs font-bold text-slate-500">{phrase.zh}</div>
+                          <div className="text-base font-bold leading-relaxed text-slate-950">{phrase.ja}</div>
+                          <div className="font-mono text-xs text-slate-400">{phrase.hint}</div>
+                        </div>
+                        {renderActionButtons(copyText, phrase.ja, id)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {globalDocMatches.length > 0 && (
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              {globalDocMatches.map(({ doc, section, block }) => {
+                const copyText = [block.lead, ...block.details].join("\n");
+                return (
+                  <div key={`search-${block.id}`} className="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+                    <div className="mb-2 flex items-center gap-2">
+                      <span className="shrink-0 rounded-md bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-700">{doc.shortTitle}</span>
+                      <span className="truncate text-[10px] text-slate-400">{section.title}</span>
+                    </div>
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 space-y-2">
+                        <div className="text-xs font-bold leading-relaxed text-slate-700">{block.lead}</div>
+                        {block.details.map((detail, detailIndex) => (
+                          <div
+                            key={`search-${block.id}-${detailIndex}`}
+                            className={
+                              detailIndex === 0 && hasJapaneseKana(detail)
+                                ? "text-base font-bold leading-relaxed text-slate-950"
+                                : "text-xs leading-relaxed text-slate-500"
+                            }
+                          >
+                            {detail}
+                          </div>
+                        ))}
+                      </div>
+                      {renderActionButtons(copyText, block.speakText, block.id)}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      ) : activeGroup === "core" ? (
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
           {filteredCorePhrases.map((phrase, index) => {
             const copyText = `${phrase.zh}\n${phrase.ja}\n${phrase.hint}`;
@@ -482,7 +579,7 @@ export default function JapanesePhrases({ initialSearchQuery = "" }: JapanesePhr
               </div>
               <div className="space-y-2">
                 {parsedDocs
-                  .filter((doc) => ["phone", "survival", "transit", "dining", "hotel", "emergency"].includes(doc.id))
+                  .filter((doc) => ["phone", "survival", "transit", "dining", "meals", "hotel", "emergency"].includes(doc.id))
                   .map((doc) => (
                     <button
                       key={doc.id}
